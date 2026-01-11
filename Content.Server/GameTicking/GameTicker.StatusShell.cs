@@ -1,10 +1,12 @@
 using System.Linq;
 using System.Text.Json.Nodes;
-using Content.Server._NC.JoinQueue; //LP edit замена
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Configuration;
+#if LP
+using Content.Server._NC.JoinQueue; //LP edit замена
+#endif
 
 namespace Content.Server.GameTicking
 {
