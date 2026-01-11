@@ -115,7 +115,7 @@ namespace Content.Server.Voting
 
             var vote = _voteManager.CreateVote(options);
 
-            var webhookState = _voteWebhooks.CreateWebhookIfConfigured(options, _cfg.GetCVar(CCVars.DiscordVoteWebhook));
+            // var webhookState = _voteWebhooks.CreateWebhookIfConfigured(options, _cfg.GetCVar(CCVars.DiscordVoteWebhook));  //LP edit удалено
 
             vote.OnFinished += (_, eventArgs) =>
             {
@@ -131,12 +131,12 @@ namespace Content.Server.Voting
                     _chatManager.DispatchServerAnnouncement(Loc.GetString("cmd-customvote-on-finished-win", ("winner", args[(int) eventArgs.Winner])));
                 }
 
-                _voteWebhooks.UpdateWebhookIfConfigured(webhookState, eventArgs);
+                // _voteWebhooks.UpdateWebhookIfConfigured(webhookState, eventArgs);  //LP edit удалено
             };
 
             vote.OnCancelled += _ =>
             {
-                _voteWebhooks.UpdateCancelledWebhookIfConfigured(webhookState);
+                // _voteWebhooks.UpdateCancelledWebhookIfConfigured(webhookState);  //LP edit удалено
             };
         }
 

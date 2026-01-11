@@ -87,11 +87,11 @@ namespace Content.Server.Administration.Systems
         {
             base.Initialize();
 
-            Subs.CVar(_config, CCVars.DiscordOnCallWebhook, OnCallChanged, true);
+            // Subs.CVar(_config, CCVars.DiscordOnCallWebhook, OnCallChanged, true);        //LP edit удалено
 
-            Subs.CVar(_config, CCVars.DiscordAHelpWebhook, OnWebhookChanged, true);
-            Subs.CVar(_config, CCVars.DiscordAHelpFooterIcon, OnFooterIconChanged, true);
-            Subs.CVar(_config, CCVars.DiscordAHelpAvatar, OnAvatarChanged, true);
+            // Subs.CVar(_config, CCVars.DiscordAHelpWebhook, OnWebhookChanged, true);
+            // Subs.CVar(_config, CCVars.DiscordAHelpFooterIcon, OnFooterIconChanged, true);
+            // Subs.CVar(_config, CCVars.DiscordAHelpAvatar, OnAvatarChanged, true);
             Subs.CVar(_config, CVars.GameHostName, OnServerNameChanged, true);
             Subs.CVar(_config, CCVars.AdminAhelpOverrideClientName, OnOverrideChanged, true);
             _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("AHELP");
@@ -110,7 +110,7 @@ namespace Content.Server.Administration.Systems
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
             SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
 
-        	_rateLimit.Register(
+            _rateLimit.Register(
                 RateLimitKey,
                 new RateLimitRegistration(
                     CCVars.AhelpRateLimitPeriod,
@@ -527,7 +527,7 @@ namespace Content.Server.Administration.Systems
             _relayMessages[userId] = existingEmbed;
 
             // Actually do the on call relay last, we just need to grab it before we dequeue every message above.
-            if (onCallRelay &&
+            /*if (onCallRelay &&        //LP edit отключение дс вебхуков от ЕЕ
                 _onCallData != null)
             {
                 existingEmbed.OnCall = true;
@@ -561,7 +561,7 @@ namespace Content.Server.Administration.Systems
             else
             {
                 existingEmbed.OnCall = false;
-            }
+            }*/
 
             _processingChannels.Remove(userId);
         }

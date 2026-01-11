@@ -8,11 +8,11 @@ using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.Discord.WebhookMessages;
-using Content.Server.DiscordAuth;
+//using Content.Server.DiscordAuth;     //LP edit заменено
 using Content.Server.EUI;
 using Content.Server.GhostKick;
 using Content.Server.Info;
-using Content.Server.JoinQueue;
+//using Content.Server.JoinQueue;       //LP edit заменено
 using Content.Server.Mapping;
 using Content.Server.Maps;
 using Content.Server.MoMMI;
@@ -33,6 +33,14 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+
+//LP edit start
+#if LP
+using Content.Server._LP.Sponsors;
+using Content.Server._NC.DiscordAuth;
+using Content.Server._NC.JoinQueue;
+#endif
+//LP eedit end
 
 namespace Content.Server.IoC
 {
@@ -71,8 +79,8 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordWebhook>();
             IoCManager.Register<VoteWebhooks>();
             IoCManager.Register<ServerDbEntryManager>();
-            IoCManager.Register<JoinQueueManager>();
-            IoCManager.Register<DiscordAuthManager>();
+            //IoCManager.Register<JoinQueueManager>();  //LP edit заменено
+            //IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
             IoCManager.Register<JobWhitelistManager>();
@@ -83,6 +91,14 @@ namespace Content.Server.IoC
             IoCManager.Register<ConnectionManager>();
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
+
+            // LP edit start
+#if LP
+            IoCManager.Register<SponsorsManager>();
+            IoCManager.Register<DiscordAuthManager>();
+            IoCManager.Register<JoinQueueManager>();
+#endif
+            // LP edit end
         }
     }
 }

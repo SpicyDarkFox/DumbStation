@@ -6,14 +6,14 @@ using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
-using Content.Server.DiscordAuth;
+//using Content.Server.DiscordAuth;   //LP edit заменено
 using Content.Server.EUI;
 using Content.Server.GameTicking;
 using Content.Server.GhostKick;
 using Content.Server.GuideGenerator;
 using Content.Server.Info;
 using Content.Server.IoC;
-using Content.Server.JoinQueue;
+//using Content.Server.JoinQueue;   //LP edit заменено
 using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Objectives;
@@ -35,6 +35,13 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+// LP edit start
+#if LP
+using Content.Server._LP.Sponsors;
+using Content.Server._NC.DiscordAuth;
+using Content.Server._NC.JoinQueue;
+#endif
+// LP edit end
 
 namespace Content.Server.Entry
 {
@@ -111,9 +118,15 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
-                IoCManager.Resolve<JoinQueueManager>().Initialize();
-                IoCManager.Resolve<DiscordAuthManager>().Initialize();
+                // IoCManager.Resolve<JoinQueueManager>().Initialize();     //LP edit заменено
+                // IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
+
+#if LP
+                IoCManager.Resolve<SponsorsManager>().Initialize();
+                IoCManager.Resolve<DiscordAuthManager>().Initialize();
+                IoCManager.Resolve<JoinQueueManager>().Initialize();
+#endif
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();
@@ -168,11 +181,11 @@ namespace Content.Server.Entry
             switch (level)
             {
                 case ModUpdateLevel.PostEngine:
-                {
-                    _euiManager.SendUpdates();
-                    _voteManager.Update();
-                    break;
-                }
+                    {
+                        _euiManager.SendUpdates();
+                        _voteManager.Update();
+                        break;
+                    }
 
                 case ModUpdateLevel.FramePostEngine:
                     _updateManager.Update();

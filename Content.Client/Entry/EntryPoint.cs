@@ -2,8 +2,6 @@ using Content.Client._White.ItemSlotRenderer;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.DiscordAuth;
-using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Flash;
@@ -39,6 +37,13 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
+// LP edit start
+#if LP
+using Content.Client._LP.Sponsors;
+using Content.Client._NC.DiscordAuth;
+using Content.Client.PClient._NC.JoinQueue;
+#endif
+// LP edit end
 
 namespace Content.Client.Entry
 {
@@ -73,9 +78,17 @@ namespace Content.Client.Entry
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly JoinQueueManager _joinQueue = default!;
-        [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+        //[Dependency] private readonly JoinQueueManager _joinQueue = default!; // LP edit заменено
+        //[Dependency] private readonly DiscordAuthManager _discordAuth = default!;
         [Dependency] private readonly DebugMonitorManager _debugMonitorManager = default!;
+
+        // LP edit start
+#if LP
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
+        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
+        [Dependency] private readonly JoinQueueManager _joinQueue = default!;
+#endif
+        // LP edit end
 
         public override void Init()
         {
@@ -166,8 +179,16 @@ namespace Content.Client.Entry
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
+            //_joinQueue.Initialize();  // LP edit заменено
+            //_discordAuth.Initialize();
+
+            // LP edit start
+#if LP
+            _sponsorsManager.Initialize();
+            _discordAuthManager.Initialize();
             _joinQueue.Initialize();
-            _discordAuth.Initialize();
+#endif
+            // LP edit end
 
             _baseClient.RunLevelChanged += (_, args) =>
             {

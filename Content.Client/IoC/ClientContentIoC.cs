@@ -3,8 +3,8 @@ using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
 using Content.Client.DeltaV.NanoChat;
-using Content.Client.DiscordAuth;
-using Content.Client.JoinQueue;
+// using Content.Client.DiscordAuth;    //LP edit заменено
+// using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
@@ -26,6 +26,13 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+// LP edit start
+#if LP
+using Content.Client._LP.Sponsors;
+using Content.Client._NC.DiscordAuth;
+using Content.Client.PClient._NC.JoinQueue;
+#endif
+// LP edit end
 namespace Content.Client.IoC
 {
     internal static class ClientContentIoC
@@ -55,13 +62,21 @@ namespace Content.Client.IoC
             collection.Register<DocumentParsingManager>();
             collection.Register<ContentReplayPlaybackManager>();
             collection.Register<ISharedPlaytimeManager, JobRequirementsManager>();
-            collection.Register<JoinQueueManager>();
-            collection.Register<DiscordAuthManager>();
+            // collection.Register<JoinQueueManager>(); //LP edit заменено
+            // collection.Register<DiscordAuthManager>();
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<NanoChatSystem>();
             collection.Register<MappingManager>();
             collection.Register<DebugMonitorManager>();
+
+            // LP edit start
+#if LP
+            collection.Register<SponsorsManager>();
+            collection.Register<DiscordAuthManager>();
+            collection.Register<JoinQueueManager>();
+#endif
+            // LP edit end
         }
     }
 }

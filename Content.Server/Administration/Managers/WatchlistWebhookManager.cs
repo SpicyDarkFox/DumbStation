@@ -38,8 +38,8 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("discord");
-        _cfg.OnValueChanged(CCVars.DiscordWatchlistConnectionBufferTime, SetBufferTime, true);
-        _cfg.OnValueChanged(CCVars.DiscordWatchlistConnectionWebhook, SetWebhookUrl, true);
+        // _cfg.OnValueChanged(CCVars.DiscordWatchlistConnectionBufferTime, SetBufferTime, true);   //LP edit удалено
+        // _cfg.OnValueChanged(CCVars.DiscordWatchlistConnectionWebhook, SetWebhookUrl, true);
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
     }
 

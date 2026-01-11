@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Text.Json.Nodes;
-using Content.Server.JoinQueue;
+using Content.Server._NC.JoinQueue; //LP edit замена
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Robust.Server.ServerStatus;
