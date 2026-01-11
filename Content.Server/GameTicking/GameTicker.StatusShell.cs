@@ -32,7 +32,9 @@ namespace Content.Server.GameTicking
         /// </summary>
         [Dependency] private readonly SharedGameTicker _gameTicker = default!;
 
+#if LP  //LP edit
         [Dependency] private readonly JoinQueueManager _joinQueue = default!;
+#endif
 
         private void InitializeStatusShell()
         {
