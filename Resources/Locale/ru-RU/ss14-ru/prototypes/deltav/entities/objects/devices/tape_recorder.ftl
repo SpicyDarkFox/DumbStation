@@ -1,0 +1,10 @@
+ent-TapeRecorder = диктофон
+    .desc = Всё, что будет сказано в это устройство, может и будет использовано против вас в суде Космического Закона.
+ent-TapeRecorderFilled = { ent-TapeRecorder }
+    .suffix = Заполненный
+    .desc = { ent-TapeRecorder.desc }
+ent-CassetteTape = аудиокассета
+    .desc = Магнитная лента, вмещающая до двух минут записи на каждой стороне.
+ent-CassetteTapeInterview = { ent-CassetteTape }
+    .suffix = Интервью с Гарри Смошем
+    .desc = { ent-CassetteTape.desc }

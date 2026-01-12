@@ -1,0 +1,16 @@
+ent-ClothingHeadHelmetHardsuitCombatStandard = шлем боевого скафандра
+    .desc = Бронированный шлем с жёлтым визором и парой встроенных фонарей.
+ent-ClothingHeadHelmetHardsuitCombatOfficer = шлем офицерского боевого скафандра
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatStandard.desc }
+ent-ClothingHeadHelmetHardsuitCombatMedical = медицинский боевой шлем
+    .desc = Облегчённый бронированный шлем с синим визором во всё лицо и встроенным фонарём.
+ent-ClothingHeadHelmetHardsuitCombatCorpsman = боевой шлем бригмедика
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatMedical.desc }
+ent-ClothingHeadHelmetHardsuitCombatRiot = шлем противоударного боевого скафандра
+    .desc = Тяжёлый бронированный шлем с герметичным визором с жёлтыми прорезями и парой встроенных фонарей.
+ent-ClothingHeadHelmetHardsuitCombatWarden = боевой шлем смотрителя
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatRiot.desc }
+ent-ClothingHeadHelmetHardsuitCombatAdvanced = шлем улучшенного боевого скафандра
+    .desc = Лёгкий, но прочный шлем с полной защитой лица и четырьмя встроенными фонарями.
+ent-ClothingHeadHelmetHardsuitCombatHoS = боевой шлем главы службы безопасности
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatAdvanced.desc }

@@ -1,0 +1,10 @@
+ent-BaseKey = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-VehicleKeySecway = ключи от секвея
+    .desc = Ключи от будущего.
+ent-VehicleKeySyndicateSegway = ключи от сегвея Синдиката
+    .desc = Выполнены в стиле культового дизайна Е-мага.
+ent-VehicleKeyATV = ключи от квадроцикла
+    .desc = Думаете, это просто один ключ? На самом деле ATV означает «Actually Two Vehicle keys».
+ent-VehicleKeyJanicart = ключи от полотёра
+    .desc = Любопытный дизайн.

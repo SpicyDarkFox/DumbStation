@@ -1,0 +1,12 @@
+ent-BaseSpeedLoaderSpecial = спидлоадер (.38 особые)
+    .desc = { ent-BaseItem.desc }
+ent-SpeedLoaderSpecial = спидлоадер (.38 особые)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialPractice = спидлоадер (.38 особые учебные)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialUranium = спидлоадер (.38 особые урановые)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialMindbreaker = спидлоадер (.38 особые "майндбрейкер")
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialHoly = спидлоадер (.38 особые святые)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }

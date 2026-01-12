@@ -1,0 +1,14 @@
+ent-N14ClosetSafe = сейф
+    .desc = Может быть наполнен ценностями.
+ent-N14LootClosetSafe = { ent-N14ClosetSafe }
+    .suffix = Лут, ВоенныйРандом
+    .desc = { ent-N14ClosetSafe.desc }
+ent-N14LootClosetSafeCurrency = { ent-N14ClosetSafe }
+    .suffix = Лут, Валюта, случайная пачка
+    .desc = { ent-N14ClosetSafe.desc }
+ent-N14LootClosetSafePrewar = { ent-N14ClosetSafe }
+    .suffix = Лут, Довоенный
+    .desc = { ent-N14ClosetSafe.desc }
+ent-N14ClosetSafeSpinner = { ent-N14ClosetSafe }
+    .suffix = кодовый замок
+    .desc = { ent-N14ClosetSafe.desc }

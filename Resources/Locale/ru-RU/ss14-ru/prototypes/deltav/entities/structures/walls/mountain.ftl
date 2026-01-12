@@ -1,0 +1,15 @@
+ent-AsteroidAltRock = астероидный камень
+    .desc = Каменистый астероид.
+    .suffix = Низкий выход руды
+ent-MountainRockMining = горная порода
+    .desc = Скалистая горная стена.
+    .suffix = Мало руды, но она ценнее
+ent-MountainRock = горная порода
+    .desc = Скалистая горная стена. Слишком твердая для добычи.
+    .suffix = Недобываемая
+ent-AsteroidAltRockMining = астероидный камень
+    .desc = Каменистый астероид.
+    .suffix = Высокий выход руды
+ent-AsteroidRockOreCrab = астероидный камень
+    .desc = Каменистый астероид.
+    .suffix = Рудный краб

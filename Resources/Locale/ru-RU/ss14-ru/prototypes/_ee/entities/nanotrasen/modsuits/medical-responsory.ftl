@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryMedical = контроллер медицинского модсьюта «Responsory»
+    .desc = Главный контроллер медицинского модсьюта «Responsory».
+ent-ClothingModsuitGauntletsResponsoryMedical = наручи медицинского модсьюта «Responsory»
+    .desc = Пара латных перчаток для медицинского модсьюта «Responsory».
+ent-ClothingModsuitHelmetResponsoryMedical = шлем медицинского модсьюта «Responsory»
+    .desc = Шлем передового уровня, разработанный NanoTrasen для медицинского модсьюта «Responsory». Оснащён встроенным HUD.
+ent-ClothingModsuitChestplateResponsoryMedical = нагрудник медицинского модсьюта «Responsory»
+    .desc = Нагрудник передового уровня, разработанный NanoTrasen для медицинского модсьюта «Responsory». Оснащён сервоприводами для снижения нагрузки от экипировки.
+ent-ClothingModsuitBootsResponsoryMedical = ботинки медицинского модсьюта «Responsory»
+    .desc = Передовая пара магнитных ботинок для медицинского модсьюта «Responsory». Пока костюм запитан, они не замедляют носителя.
+ent-SuitStorageResponsoryMedical = { ent-SuitStorageBase }
+    .suffix = Медицинский модсьют «Responsory»
+    .desc = { ent-SuitStorageBase.desc }

@@ -1,0 +1,9 @@
+ent-ClothingBeltKatanaSheathFilled = { ent-ClothingBeltKatanaSheath }
+    .suffix = Заполненный
+    .desc = { ent-ClothingBeltKatanaSheath.desc }
+ent-ClothingBeltKatanaSheathFilledHoS = антикварные ножны для катаны
+    .desc = Роскошный пояс, украшенный золотой филигранью, с лентой, сделанной из лоскута льна, сохранённого в стазис-поле. История этих ножен затерялась в веках.
+    .suffix = Заполненный
+ent-ClothingBeltCorpsmanWebbingFilled = { ent-ClothingBeltCorpsmanWebbing }
+    .suffix = Заполненный
+    .desc = { ent-ClothingBeltCorpsmanWebbing.desc }

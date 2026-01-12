@@ -1,0 +1,13 @@
+ent-ClothingModsuitApocryphal = контроллер модсьюта «Апокриф»
+    .desc = Главный контроллер для модсьюта «Апокриф».
+ent-ClothingModsuitGauntletsApocryphal = наручи модсьюта «Апокриф»
+    .desc = Пара латных перчаток для модсьюта «Апокриф».
+ent-ClothingModsuitHelmetApocryphal = шлем модсьюта «Апокриф»
+    .desc = Шлем передового уровня, разработанный NanoTrasen для модсьюта «Апокриф». Оснащён встроенным HUD.
+ent-ClothingModsuitChestplateApocryphal = нагрудник модсьюта «Апокриф»
+    .desc = Нагрудник передового уровня, разработанный NanoTrasen для модсьюта «Апокриф». Оснащён сервоприводами для снижения нагрузки от экипировки.
+ent-ClothingModsuitBootsApocryphal = ботинки модсьюта «Апокриф»
+    .desc = Передовая пара магнитных ботинок для модсьюта «Апокриф». Пока костюм запитан, они не замедляют носителя.
+ent-SuitStorageApocryphal = { ent-SuitStorageBase }
+    .suffix = Модсьют «Апокриф»
+    .desc = { ent-SuitStorageBase.desc }

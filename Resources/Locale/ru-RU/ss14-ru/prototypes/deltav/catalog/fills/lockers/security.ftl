@@ -1,0 +1,12 @@
+ent-GunSafePistolUniversal = сейф с MK32
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeSniperGrand = сейф с винтовкой Mark 1
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeVulcanRifle = сейф с «Вулканом»
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeAdjutantShotgun = сейф с «Адъютантом»
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeEnergyGun = сейф с энергетическим ружьём
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeEnergyGunMini = сейф с миниатюрным энергетическим ружьём
+    .desc = { ent-GunSafe.desc }

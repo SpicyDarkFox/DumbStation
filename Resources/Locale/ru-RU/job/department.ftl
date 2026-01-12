@@ -1,0 +1,11 @@
+department-Logistics = Снабжение
+department-Civilian = Сервисный отдел
+department-Command = Командование
+department-CentralCommand = Центральное командование
+department-Engineering = Инженерный отдел
+department-Medical = Медицинский отдел
+department-Epistemics = НИО
+department-Security = Служба безопасности
+department-Dignitary = Дипломатия
+department-Silicon = Синтетики
+department-Specific = На определённых станциях

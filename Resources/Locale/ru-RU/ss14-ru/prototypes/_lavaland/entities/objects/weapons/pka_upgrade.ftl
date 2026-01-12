@@ -1,0 +1,10 @@
+ent-BasePKAUpgrade = набор модификаций ПКА
+    .desc = Набор модификаций для прото-кинетического ускорителя.
+ent-PKAUpgradeDamage = набор модификаций ПКА (урон)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeRange = набор модификаций ПКА (дальность)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeFireRate = набор модификаций ПКА (скорострельность)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeLight = набор модификаций ПКА (фонарь)
+    .desc = { ent-BasePKAUpgrade.desc }

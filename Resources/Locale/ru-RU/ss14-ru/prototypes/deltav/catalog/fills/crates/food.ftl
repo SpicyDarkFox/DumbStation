@@ -1,0 +1,10 @@
+ent-CrateFoodDonkpocketSavory = { ent-CratePlastic }
+    .desc = { ent-CratePlastic.desc }
+ent-CrateFoodDonkpocketSweet = { ent-CratePlastic }
+    .desc = { ent-CratePlastic.desc }
+ent-CrateFoodEmergencyPie = Экстренная доставка пирогов
+    .desc = "Так дай им поесть пирог"
+ent-CrateHydroCoDairy = ящик молочных продуктов HydroCo
+    .desc = Партия сухих молочных продуктов от HydroCo. Содержит сухое коровье и соевое молоко.
+ent-CrateHydroCoJuice = ящик соков HydroCo
+    .desc = Ассорти сухих соков от HydroCo.

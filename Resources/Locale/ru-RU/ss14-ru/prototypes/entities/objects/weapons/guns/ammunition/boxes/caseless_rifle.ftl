@@ -1,0 +1,12 @@
+ent-BaseMagazineBoxCaselessRifle = коробка патронов (.25 безгильзовые)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxCaselessRifle = коробка патронов (.25 безгильзовые)
+    .desc = Картонная коробка с безгильзовыми патронами .25 калибра. Предназначена для хранения кинетических боеприпасов общего назначения.
+ent-MagazineBoxCaselessRiflePractice = коробка патронов (.25 безгильзовые учебные)
+    .desc = Картонная коробка с безгильзовыми патронами .25 калибра. Предназначена для хранения безвредных меловых боеприпасов.
+ent-MagazineBoxCaselessRifleIncendiary = ammunition box (.25 caseless incendiary)
+    .desc = { ent-MagazineBoxCaselessRifle.desc }
+ent-MagazineBoxCaselessRifleUranium = ammunition box (.25 caseless uranium)
+    .desc = { ent-MagazineBoxCaselessRifle.desc }
+ent-MagazineBoxCaselessRifleShrapnel = ammunition box (.25 caseless shrapnel)
+    .desc = { ent-MagazineBoxCaselessRifle.desc }

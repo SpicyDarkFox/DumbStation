@@ -1,0 +1,9 @@
+bark-chicken-1 = Ко-коооо
+bark-chicken-2 = Ко
+bark-chicken-3 = Ко-ко ко-кооо
+bark-chicken-4 = Еда
+bark-chicken-5 = Где трава?
+bark-chicken-6 = Нужно поесть
+bark-chicken-7 = Яйцо
+bark-chicken-8 = Ко-ко ко-ко
+bark-chicken-count = 8

@@ -1,0 +1,23 @@
+ent-CarpSpawnerMundane = Спавнер NPC карпов
+    .suffix = не гостроль
+    .desc = { ent-MarkerBase.desc }
+ent-SnakeSpawnerMundane = Спавнер NPC змей
+    .desc = { ent-MarkerBase.desc }
+ent-SnakeMobMundane = Спавнер змей для утилизации
+    .suffix = 75%
+    .desc = { ent-MarkerBase.desc }
+ent-SnakeMobMundane25 = Спавнер змей для утилизации
+    .suffix = 25%
+    .desc = { ent-MarkerBase.desc }
+ent-XenoAISpawner = Спавнер ксеноморфов
+    .suffix = не гостроль
+    .desc = { ent-MarkerBase.desc }
+ent-ArgocyteAISpawner = Спавнер аргоситов
+    .desc = { ent-MarkerBase.desc }
+ent-WatcherAISpawner = Спавнер наблюдателей
+    .desc = { ent-MarkerBase.desc }
+ent-SpaceCreatureAISpawner = Спавнер космических существ
+    .desc = { ent-MarkerBase.desc }
+ent-ArenaSpawner = Спавнер арены
+    .desc = { ent-MarkerBase.desc }
+

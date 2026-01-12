@@ -1,0 +1,15 @@
+ent-N14BarricadeSandbagSingle = мешки с песком
+    .desc = Укрепление из мешков с песком.
+ent-N14BarricadeTanktrap = противотанковый ёж
+    .desc = Сварная металлическая конструкция для блокирования техники.
+ent-N14BarricadeTanktrapRusty = противотанковый ёж
+    .desc = Ржавая сварная металлическая конструкция для блокирования техники.
+    .suffix = ржавый
+ent-N14BarricadeRazorwire = заграждение из колючей проволоки
+    .desc = Фортификация, обвитая колючей проволокой типа «егоза».
+ent-N14BarricadeMetal = металлическая баррикада
+    .desc = Металлическое защитное укрепление.
+    .suffix = чёрная
+ent-N14BarricadeMetalGreen = { ent-N14BarricadeMetal }
+    .suffix = зелёная
+    .desc = { ent-N14BarricadeMetal.desc }

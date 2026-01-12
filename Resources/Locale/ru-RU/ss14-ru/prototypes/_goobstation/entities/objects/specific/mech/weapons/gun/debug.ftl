@@ -1,0 +1,9 @@
+ent-WeaponMechDebugBallistic = дебаг-бах
+    .suffix = Оружие меха, ОТЛАДКА, Баллистическое
+    .desc = { ent-BaseMechWeaponRange.desc }
+ent-WeaponMechDebugLaser = дебаг-пиу
+    .desc = Оружие, использующее свет, усиленный стимулированным излучением радиации.
+    .suffix = Оружие меха, ОТЛАДКА, Лазерное
+ent-WeaponMechDebugDisabler = дебаг-тык
+    .desc = Оружие самообороны, которое изматывает органические цели, ослабляя их до потери сознания.
+    .suffix = Оружие меха, ОТЛАДКА, Стаббер

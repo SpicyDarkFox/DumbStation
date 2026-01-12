@@ -1,0 +1,11 @@
+# Воксы — Чешуя и части тела
+marking-VoxLArmScales = Вокс, левая рука (Чешуя)
+marking-VoxLFootScales = Вокс, левая стопа (Чешуя)
+marking-VoxLHandScales = Вокс, левая кисть (Чешуя)
+marking-VoxLLegScales = Вокс, левая нога (Чешуя)
+marking-VoxRArmScales = Вокс, правая рука (Чешуя)
+marking-VoxRFootScales = Вокс, правая стопа (Чешуя)
+marking-VoxRHandScales = Вокс, правая кисть (Чешуя)
+marking-VoxRLegScales = Вокс, правая нога (Чешуя)
+marking-VoxBeak = Клюв (Острый)
+marking-VoxTail = Вокс, хвост (Средний)

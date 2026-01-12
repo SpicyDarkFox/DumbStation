@@ -1,0 +1,12 @@
+ent-BulletSpecial = пуля (.38 особые)
+    .desc = { ent-BaseBullet.desc }
+ent-BulletSpecialPractice = пуля (.38 особые учебные)
+    .desc = { ent-BaseBulletPractice.desc }
+ent-BulletSpecialIncendiary = пуля (.38 особые зажигательные)
+    .desc = { ent-BaseBulletIncendiary.desc }
+ent-BulletSpecialUranium = пуля (.38 особые урановые)
+    .desc = { ent-BaseBulletUranium.desc }
+ent-BulletSpecialHoly = пуля (.38 особые святые)
+    .desc = { ent-BaseBullet.desc }
+ent-BulletSpecialMindbreaker = пуля (.38 особые "майндбрейкер")
+    .desc = { ent-BaseBulletPractice.desc }

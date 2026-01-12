@@ -1,0 +1,43 @@
+chat-language-Universal-name = Всеобщий
+chat-language-Psychomantic-name = Психомантский
+chat-language-Bubblish-name = Пузырчатый
+chat-language-RootSpeak-name = Корневой
+chat-language-Nekomimetic-name = Неко
+chat-language-Draconic-name = Синта'Унати
+chat-language-Azaziba-name = Синта'Азазиба
+chat-language-SolCommon-name = Солнечный общий
+chat-language-NovuNederic-name = Нову-недерик
+chat-language-TauCetiBasic-name = Бэйсик
+chat-language-Tradeband-name = Трейдбанд
+chat-language-Freespeak-name = Фриспик
+chat-language-Elyran-name = Элиранский
+chat-language-Canilunzt-name = Канилунзт
+chat-language-Moffic-name = Моффский
+chat-language-RobotTalk-name = Бинарный
+chat-language-Calcic-name = Кальциевый
+chat-language-ValyrianStandard-name = Валирийский
+chat-language-Sign-name = Язык жестов
+chat-language-Marish-name = Мариш
+chat-language-Chittin-name = Хитин
+chat-language-Xeeplian-name = Ксиплианский
+
+# Языки животных
+
+chat-language-Cat-name = Кошачий
+chat-language-Chicken-name = Куриный
+chat-language-Cow-name = Коровий
+chat-language-Crab-name = Крабий
+chat-language-Dog-name = Собачий
+chat-language-Duck-name = Утиный
+chat-language-Eldritch-name = Элдрич
+chat-language-Fox-name = Лисий
+chat-language-Hissing-name = Шипение
+chat-language-Kangaroo-name = Кенгуриный
+chat-language-Kobold-name = Кобольдский
+chat-language-Monkey-name = Обезьяний
+chat-language-Mouse-name = Мышиный
+chat-language-Penguin-name = Пингвиний
+chat-language-Pig-name = Свиной
+chat-language-Sheep-name = Овечий
+chat-language-Xeno-name = Ксено
+chat-language-DroneTalk-name = Дрон-код

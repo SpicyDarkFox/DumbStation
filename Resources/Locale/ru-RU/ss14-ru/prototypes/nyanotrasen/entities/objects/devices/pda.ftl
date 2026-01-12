@@ -1,0 +1,12 @@
+ent-PrisonerPDA = КПК заключённого
+    .desc = Прозрачный, чтобы убедиться, что внутри не прячут запрещённые предметы.
+ent-GladiatorPDA = КПК гладиатора
+    .desc = { ent-PrisonerPDA.desc }
+ent-PrisonGuardPDA = КПК тюремного охранника
+    .desc = Красный, чтобы скрывать следы крови заключённых.
+ent-MailCarrierPDA = КПК курьера
+    .desc = Пахнет нераспечатанными письмами.
+ent-MartialArtistPDA = КПК бойца
+    .desc = Пахнет соломой.
+ent-ForensicMantisPDA = КПК мантиса
+    .desc = Пахнет запрещёнными веществами.

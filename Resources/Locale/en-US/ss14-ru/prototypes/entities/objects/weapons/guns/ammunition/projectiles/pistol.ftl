@@ -1,0 +1,12 @@
+ent-BulletPistol = bullet (.35 auto)
+    .desc = { ent-BaseBullet.desc }
+ent-BulletPistolPractice = bullet (.35 auto practice)
+    .desc = { ent-BaseBulletPractice.desc }
+ent-BulletPistolIncendiary = bullet (.35 auto incendiary)
+    .desc = { ent-BaseBulletIncendiary.desc }
+ent-BulletPistolUranium = bullet (.35 auto uranium)
+    .desc = { ent-BaseBulletUranium.desc }
+ent-BulletPistolShrapnel = bullet (.35 auto shrapnel)
+    .desc = { ent-BaseBullet.desc }
+ent-BulletPistolShrapnelSpread = { ent-BulletPistolShrapnel }
+    .desc = { ent-BulletPistolShrapnel.desc }

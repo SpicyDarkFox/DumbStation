@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpsuitRecruitNT = комбинезон рекрута
+    .desc = Классический серый комбинезон с синими элементами. Идеально для достойного помощника.
+ent-ClothingUniformJumpsuitRecruitSyndie = комбинезон рекрута Синдиката
+    .desc = Подозрительный тёмно-серый комбинезон. Как будто пассажиры не были и без того достаточно подозрительными.
+ent-ClothingUniformJumpsuitRepairmanNT = комбинезон ремонтника
+    .desc = Комбинезон, напоминающий вам определённую рабочую специальность в гражданском секторе. Надеемся, вам не придётся выполнять ту же работу, что и этим чудакам.
+ent-ClothingUniformJumpsuitRepairmanSyndie = комбинезон ремонтника Синдиката
+    .desc = Функциональный, модный, крутой. Инженеры Nanotrasen мечтают выглядеть так же хорошо, как и вы.
+ent-ClothingUniformJumpsuitParamedicNT = paramedic jumpsuit
+    .desc = A basic white & blue jumpsuit made for Nanotrasen paramedics stationed in combat sectors.
+ent-ClothingUniformJumpsuitParamedicSyndie = комбинезон парамедика Синдиката
+    .desc = По какой-то причине, надевая его, вы чувствуете, что очень близки к нарушению Женевской конвенции.
+ent-ClothingUniformJumpsuitChiefEngineerNT = chief engineer jumpsuit
+    .desc = It is often joked that the role of the combat-sector Chief Engineer is where the actual, logistically-minded engineers are promoted to. Good luck.
+ent-ClothingUniformJumpsuitChiefEngineerSyndie = комбинезон старшего инженера Синдиката
+    .desc = Злодейского вида комбинезон со светоотражающим жилетом и красной рубашкой.

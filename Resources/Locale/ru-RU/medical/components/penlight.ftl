@@ -1,0 +1,11 @@
+penlight-off = Фонарик-ручка выключен.
+penlight-cannot-examine-self = Вы не можете осмотреть собственные глаза.
+pen-light-exam-title = Осмотр фонариком
+pen-light-window-entity-eyes-text = Состояние глаз { $entityName }:
+pen-light-window-no-patient-data-text = Нет данных о пациенте.
+pen-light-window-entity-unknown-text = неизвестно
+pen-light-exam-blind-text = Глаза пациента стеклянные и расфокусированные. Они совсем не следят за светом.
+pen-light-exam-drunk-text = Наблюдается явная задержка между движением света и реакцией глаз пациента.
+pen-light-exam-eyedamage-text = В зрачках пациента видны тёмные пятна, заметные при попадании света.
+pen-light-exam-hallucinating-text = Глаза пациента блуждают, зрачки расширены. Он не может сфокусироваться на свете.
+pen-light-exam-healthy-text = Пациент идеально следит за светом, без каких-либо задержек.

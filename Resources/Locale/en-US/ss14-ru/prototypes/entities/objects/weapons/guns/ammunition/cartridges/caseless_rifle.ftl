@@ -1,0 +1,12 @@
+ent-BaseCartridgeCaselessRifle = cartridge (.25 rifle)
+    .desc = { ent-BaseCartridge.desc }
+ent-CartridgeCaselessRifle = cartridge (.25 caseless)
+    .desc = { ent-BaseCartridgeCaselessRifle.desc }
+ent-CartridgeCaselessRiflePractice = cartridge (.25 caseless practice)
+    .desc = { ent-BaseCartridgeCaselessRifle.desc }
+ent-CartridgeCaselessRifleIncendiary = cartridge (.25 caseless incendiary)
+    .desc = { ent-BaseCartridgeCaselessRifle.desc }
+ent-CartridgeCaselessRifleUranium = cartridge (.25 caseless uranium)
+    .desc = { ent-BaseCartridgeCaselessRifle.desc }
+ent-CartridgeCaselessRifleShrapnel = cartridge (.25 caseless shrapnel)
+    .desc = { ent-BaseCartridgeCaselessRifle.desc }

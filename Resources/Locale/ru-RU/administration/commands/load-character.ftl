@@ -1,0 +1,11 @@
+loadcharacter-command-description = Применяет выбранного вами персонажа к сущности.
+loadcharacter-command-help = Применение: loadcharacter | loadcharacter <entityUid> | loadcharacter <entityUid> <characterName>
+loadcharacter-command-mismatch = Обнаружено несоответствие вида между персонажем и выбранной сущностью, что может привести к неожиданным результатам.
+loadcharacter-command-complete = Персонаж загружен.
+loadcharacter-command-fetching = Загружаются данные персонажа для { $name }...
+loadcharacter-command-fetching-failed = Не удалось загрузить данные персонажа!
+loadcharacter-command-failed-fetching = Не удалось получить профиль..???
+loadcharacter-command-hint-select = Выбор персонажа
+spawncharacter-command-description = Спавнит вашего выбранного/указанного персонажа
+spawncharacter-command-help = Применение: spawncharacter | spawncharacter <characterName>
+spawncharacter-command-complete = Персонаж заспавлен.

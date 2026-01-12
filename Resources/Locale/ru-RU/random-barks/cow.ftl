@@ -1,0 +1,11 @@
+bark-cow-1 = Мууууу
+bark-cow-2 = Му
+bark-cow-3 = Хрррф
+bark-cow-4 = Муууууууу
+bark-cow-5 = Муууу
+bark-cow-6 = Пол — это еда
+bark-cow-7 = Я хочу есть
+bark-cow-8 = Как долго я уже здесь?
+bark-cow-9 = Муууу мууууууу
+bark-cow-10 = Хрррф... Муууууу
+bark-cow-count = 10

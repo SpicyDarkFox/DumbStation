@@ -1,0 +1,17 @@
+ent-ClothingBlueshieldArmourVest = бронежилет «Синего щита»
+    .desc = Бронежилет со значком «Синего щита».
+ent-ClothingBlueshieldArmoredJacket = бронированная куртка «Синего щита»
+    .desc = Куртка со вшитыми армирующими слоями.
+ent-ClothingBlueshieldArmoredCowboyJacket = бронированная ковбойская куртка «Синего щита»
+    .desc = Куртка для защиты важных персон в диких краях.
+ent-ClothingBlueshieldArmoredCoat = бронированное пальто «Синего щита»
+    .desc = Пальто для холодных зим со вшитыми пластинами.
+ent-ClothingBlueshieldArmoredCoatOpen = бронированное пальто «Синего щита»
+    .suffix = Расстёгнуто
+    .desc = { ent-ClothingOuterStorageFoldableBaseOpened.desc }
+ent-ClothingBlueshieldArmoredMarine = бронированный жилет морпеха «Синего щита»
+    .desc = Жилет со времён службы «Синего щита» в морской пехоте.
+ent-ClothingBlueshieldArmoredVest = бронежилет «Синего щита»
+    .desc = Жилет со вшитыми армирующими слоями.
+ent-ClothingBlueshieldArmoredKimono = бронированное кимоно «Синего щита»
+    .desc = Времена меняются — «Синий щит» должен меняться вместе с ними.

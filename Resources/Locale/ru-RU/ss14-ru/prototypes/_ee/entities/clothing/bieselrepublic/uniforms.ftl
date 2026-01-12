@@ -1,0 +1,15 @@
+ent-ClothingUniformJumpsuitTCAFArmsman = униформа пехотинца TCAF
+    .desc = Униформа, носимая действующими и бывшими пехотинцами Вооружённых сил Тау Кита.
+    .suffix = TCFL
+ent-ClothingUniformJumpsuitTCFLLegate = униформа легата TCFL
+    .desc = Униформа, носимая офицерским составом Иностранного легиона Тау Кита.
+    .suffix = TCFL
+ent-ClothingUniformJumpsuitTCFLPilot = униформа пилота TCFL
+    .desc = Униформа, носимая действующими и бывшими пилотами Иностранного легиона Тау Кита.
+    .suffix = TCFL
+ent-ClothingUniformJumpsuitTCFLSentinel = униформа часового TCFL
+    .desc = Униформа, носимая унтер-офицерами Иностранного легиона Тау Кита.
+    .suffix = TCFL
+ent-ClothingUniformJumpsuitTCFLVolunteer = униформа добровольца TCFL
+    .desc = Униформа, носимая рядовыми членами Иностранного легиона Тау Кита. Как полностью добровольческая служба, принимающая всех независимо от расы, вида и убеждений, каждый член TCFL начинает именно с этого уровня.
+    .suffix = TCFL

@@ -1,0 +1,11 @@
+ent-RandomRockSpawner = спавнер шахтёрской руды
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCrystalSpawner = спавнер кристаллов
+    .suffix = 100%
+    .desc = { ent-MarkerBase.desc }
+ent-RandomWallRockSpawner = спавнер каменной скалы
+    .desc = { ent-MarkerBase.desc }
+ent-RandomBasaltRockSpawner = спавнер базальтовой скалы
+    .desc = { ent-MarkerBase.desc }
+ent-RandomWoodenStructure = спавнер деревянной стены или опоры
+    .desc = { ent-MarkerBase.desc }

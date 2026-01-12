@@ -1,0 +1,13 @@
+ent-ClothingOuterCoatHyenhSweater = уютный свитер
+    .desc = Он уютный.
+ent-ClothingOuterWinterCoatLong = длинное зимнее пальто
+    .desc = Даже ваши ноги будут в тепле в этом стильном пальто.
+ent-ClothingOuterWinterCoatPlaid = клетчатое зимнее пальто
+    .desc = Возможно, оно сделано из настоящей шерсти.
+ent-ClothingOuterWinterCoatMail = зимнее пальто почтальона
+    .desc = Защитит от холода, но не от собак.
+ent-ClothingOuterWinterCoatMantis = зимнее пальто богомола
+    .desc = Решайте холодные дела со стилем.
+ent-ClothingOuterWinterMystagogue = зимнее пальто мистагога
+    .desc = { ent-ClothingOuterWinterRD.desc }
+

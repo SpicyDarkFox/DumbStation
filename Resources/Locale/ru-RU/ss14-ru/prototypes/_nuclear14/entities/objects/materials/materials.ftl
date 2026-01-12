@@ -1,0 +1,12 @@
+ent-N14MaterialBase = { ent-MaterialBase }
+    .desc = Сырьё.
+    .suffix = Полный, 30
+ent-N14MaterialCircuitry = микросхемы
+    .suffix = Полный
+    .desc = { ent-N14MaterialBase.desc }
+ent-N14MaterialCircuitry10 = { ent-N14MaterialCircuitry }
+    .suffix = 10
+    .desc = { ent-N14MaterialCircuitry.desc }
+ent-N14MaterialCircuitry1 = { ent-N14MaterialCircuitry }
+    .suffix = Один
+    .desc = { ent-N14MaterialCircuitry.desc }

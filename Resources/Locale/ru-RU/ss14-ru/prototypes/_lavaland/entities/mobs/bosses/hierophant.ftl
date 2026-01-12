@@ -1,0 +1,10 @@
+ent-LavalandBossHierophant = иерофант
+    .desc = Массивная металлическая булава, парящая в воздухе в ожидании. Она заставит вас плясать под свою дудку.
+ent-LavalandHierophantSquare = квадрат иерофанта
+    .suffix = НЕ МАППИТЬ
+    .desc = { "" }
+ent-LavalandHierophantDamageField = { "" }
+    .desc = { "" }
+ent-LavalandHierophantChaser = преследователь иерофанта
+    .suffix = НЕ МАППИТЬ
+    .desc = { "" }

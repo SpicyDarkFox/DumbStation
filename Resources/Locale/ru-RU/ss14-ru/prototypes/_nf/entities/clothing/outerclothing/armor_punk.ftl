@@ -1,0 +1,14 @@
+ent-ClothingOuterVestWebMercenary = разгрузочный жилет наёмника
+    .desc = Высококачественный бронежилет, изготовленный из твердого синтетического материала. Он удивительно гибкий и легкий, несмотря на внушительные бронепластины.
+ent-ClothingOuterArmorPunkGreen = панк-броня
+    .desc = { ent-ClothingOuterVestWebMercenary.desc }
+ent-ClothingOuterArmorPunkOrange = панк-броня
+    .desc = { ent-ClothingOuterArmorPunkGreen.desc }
+ent-ClothingOuterArmorPunkRed = панк-броня
+    .desc = { ent-ClothingOuterArmorPunkGreen.desc }
+ent-ClothingOuterArmorPunkRandomized = панк-броня
+    .suffix = Случайный вид
+    .desc = { ent-ClothingOuterArmorPunkGreen.desc }
+ent-ClothingOuterArmorElitePunkRandomized = тяжёлая панк-броня
+    .suffix = Случайный вид
+    .desc = { ent-ClothingOuterArmorBulletproof.desc }

@@ -1,0 +1,13 @@
+ent-ClothingModsuitTCFLLegionnaire = контроллер модсьюта легионера TCFL
+    .desc = Главный контроллер для модсьюта легионера. Его носят офицеры Иностранного Легиона Тау Кита.
+ent-ClothingModsuitGauntletsTCFLLegionnaire = наручи модсьюта легионера TCFL
+    .desc = Пара латных перчаток для модсьюта легионера.
+ent-ClothingModsuitHelmetTCFLLegionnaire = шлем модсьюта легионера TCFL
+    .desc = Шлем передового уровня, разработанный NanoTrasen для модсьюта легионера. Включает встроенный HUD.
+ent-ClothingModsuitChestplateTCFLLegionnaire = нагрудник модсьюта легионера TCFL
+    .desc = Нагрудник передового уровня, разработанный NanoTrasen для модсьюта легионера. Оснащён сервоприводами для снижения нагрузки от экипировки.
+ent-ClothingModsuitBootsTCFLLegionnaire = ботинки модсьюта легионера TCFL
+    .desc = Передовая пара магнитных ботинок для модсьюта легионера. Пока костюм запитан, они не замедляют носителя.
+ent-SuitStorageTCFLLegionnaire = { ent-SuitStorageBase }
+    .suffix = Модсьют TCFL
+    .desc = { ent-SuitStorageBase.desc }

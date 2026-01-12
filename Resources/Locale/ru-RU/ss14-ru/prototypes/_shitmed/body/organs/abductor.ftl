@@ -1,0 +1,16 @@
+ent-OrganAbductorBrain = мозг абдуктора
+    .desc = { ent-OrganHumanBrain.desc }
+ent-OrganAbductorEyes = глаза абдуктора
+    .desc = { ent-OrganHumanEyes.desc }
+ent-OrganAbductorEars = уши абдуктора
+    .desc = { ent-OrganHumanEars.desc }
+ent-OrganAbductorLungs = лёгкие абдуктора
+    .desc = { ent-OrganHumanLungs.desc }
+ent-OrganAbductorHeart = сердце абдуктора
+    .desc = { ent-OrganHumanHeart.desc }
+ent-OrganAbductorStomach = желудок абдуктора
+    .desc = { ent-OrganHumanStomach.desc }
+ent-OrganAbductorLiver = печень абдуктора
+    .desc = { ent-OrganHumanLiver.desc }
+ent-OrganAbductorKidneys = почки абдуктора
+    .desc = { ent-OrganHumanKidneys.desc }

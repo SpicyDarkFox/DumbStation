@@ -1,0 +1,9 @@
+ent-LockerNanorepFilled = { ent-LockerNanorep }
+    .suffix = Заполнен
+    .desc = { ent-LockerNanorep.desc }
+ent-LockerBlueshieldOfficerFilled = { ent-LockerBlueshieldOfficer }
+    .suffix = Заполнен
+    .desc = { ent-LockerBlueshieldOfficer.desc }
+ent-LockerMagistrateFilled = { ent-LockerMagistrate }
+    .suffix = Заполнен
+    .desc = { ent-LockerMagistrate.desc }

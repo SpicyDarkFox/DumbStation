@@ -1,0 +1,17 @@
+ent-DartGunChangeling = стрекало дальнего боя
+    .desc = Реактивное стрекало, способное стрелять органическими дротиками в цели.
+    .suffix = Несъёмное
+ent-ChangelingDart = органический дротик
+    .desc = Тонкий, как игла, дротик, сформированный из кости.
+ent-ChangelingDartMute = немой органический дротик
+    .suffix = Немота
+    .desc = { ent-ChangelingDart.desc }
+ent-ChangelingDartBlind = ослепляющий органический дротик
+    .suffix = Ослепление
+    .desc = { ent-ChangelingDart.desc }
+ent-ChangelingDartCryo = криогенный органический дротик
+    .suffix = Крио
+    .desc = { ent-ChangelingDart.desc }
+ent-ChangelingDartLethargic = летаргический органический дротик
+    .suffix = Летаргия
+    .desc = { ent-ChangelingDart.desc }

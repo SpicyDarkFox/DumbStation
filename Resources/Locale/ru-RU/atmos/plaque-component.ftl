@@ -1,0 +1,10 @@
+atmos-plaque-component-desc-zum = Эта табличка знаменует собой расцвет подразделения Атмос ZUM. Пусть они несут факел, оставленный подразделениями Атмос ZAS, LINDA и FEA.
+atmos-plaque-component-desc-fea = Эта табличка знаменует собой падение подразделения Атмос FEA. В память обо всех обугленных, задыхающихся и хрупких людях, погибших от его рук.
+atmos-plaque-component-desc-linda = Эта табличка знаменует собой падение подразделения Атмос LINDA. В память обо всех обугленных, задыхающихся и хрупких людях, погибших от его рук.
+atmos-plaque-component-desc-zas = Эта табличка знаменует собой падение подразделения Атмос ZAS. В память обо всех обугленных, задыхающихся и хрупких людях, погибших от его рук.
+atmos-plaque-component-desc-unset = Эм-м...
+atmos-plaque-component-name-zum = Памятная табличка подразделения Атмос ZUM
+atmos-plaque-component-name-fea = Памятная табличка подразделения Атмос FEA
+atmos-plaque-component-name-linda = Памятная табличка подразделения Атмос LINDA
+atmos-plaque-component-name-zas = Памятная табличка подразделения Атмос ZAS
+atmos-plaque-component-name-unset = Эм-м...

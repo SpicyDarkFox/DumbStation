@@ -1,0 +1,13 @@
+ent-ClothingOuterCoatLettermanBlue = синий пиджак почтальона
+    .desc = Синий школьный пиджак с большой цифрой «14», вышитой на спине.
+ent-ClothingOuterCoatLettermanRed = красный пиджак почтальона
+    .desc = Красный школьный пиджак с большой цифрой «14», вышитой на спине.
+ent-ClothingOuterCoatMNKWhiteHoodie = белое худи MNK
+    .desc = Классическое белое худи производства MNK.
+ent-ClothingOuterCoatMNKBlackTopCoat = чёрное пальто MNK
+    .desc = Прочное чёрное верхнее пальто MNK.
+ent-ClothingOuterCoatMNKBlackJacket = чёрная куртка MNK
+    .desc = Лёгкая чёрная куртка MNK.
+ent-ClothingOuterWizardFake = роба волшебника
+    .desc = Набор синих роб.
+    .suffix = подделка

@@ -1,0 +1,11 @@
+expendable-light-start-verb = Зажечь
+expendable-light-spent-flare-name = использованный фаер
+expendable-light-spent-flare-desc = похоже, этот фаер догорел. Какая жалость.
+expendable-light-burnt-torch-name = сгоревший факел
+expendable-light-burnt-torch-desc = Похоже, этот факел догорел. Какая досада.
+expendable-light-spent-green-glowstick-name = использованный зелёный хис
+expendable-light-spent-red-glowstick-name = использованный красный хис
+expendable-light-spent-purple-glowstick-name = использованный фиолетовый хис
+expendable-light-spent-yellow-glowstick-name = использованный жёлтый хис
+expendable-light-spent-blue-glowstick-name = использованный синий хис
+expendable-light-spent-glowstick-desc = Похоже, этот хис больше не светится. Как трагично.

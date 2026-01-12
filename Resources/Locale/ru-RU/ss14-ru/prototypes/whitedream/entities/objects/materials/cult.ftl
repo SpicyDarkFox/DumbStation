@@ -1,0 +1,12 @@
+ent-RunedMetal = рунический металл
+    .desc = Необычный лист металла с пульсирующей руной.
+    .suffix = Полная стопка
+ent-RunedMetal1 = { ent-RunedMetal }
+    .suffix = Один лист
+    .desc = { ent-RunedMetal.desc }
+ent-RunedMetal4 = { ent-RunedMetal }
+    .suffix = 4 листа
+    .desc = { ent-RunedMetal.desc }
+ent-RunedMetal20 = { ent-RunedMetal }
+    .suffix = 20 листов
+    .desc = { ent-RunedMetal.desc }

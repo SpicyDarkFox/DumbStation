@@ -1,0 +1,25 @@
+# Хвосты
+marking-BunnyTail = Кроличий хвост
+marking-BunnyTail-bunnytail = Хвост
+marking-BunnyTailAlt = Кроличий хвост (альт.)
+marking-BunnyTailAlt-bunnytailalt = Хвост
+marking-DobleFur = Двойной хвост
+marking-DobleFur-doblefurtailtone1 = Внешняя часть
+marking-DobleFur-doblefurtailtone2 = Внутренняя часть
+marking-FluffyTail = Пушистый хвост
+marking-FluffyTail-fluffytail = Хвост
+marking-FoxNineTails = Девять хвостов
+marking-FoxNineTails-foxninetailstone1 = Внутренняя часть
+marking-FoxNineTails-foxninetailstone2 = Внешняя часть
+marking-FoxThreeTails = Три хвоста
+marking-FoxThreeTails-foxthreetailstone1 = Внутренняя часть
+marking-FoxThreeTails-foxthreetailstone2 = Внешняя часть
+marking-HorseTailCulty = Культистский лошадиный хвост
+marking-HorseTailCulty-horsetailculty = Хвост
+marking-HorseTailLong = Длинный лошадиный хвост
+marking-HorseTailLong-horsetaillong = Хвост
+marking-SharkTail = Акулий хвост
+marking-SharkTail-sharktail = Хвост
+marking-TasselTail = Хвост с кисточкой
+marking-TasselTail-tasseltailtone1 = Внутренняя часть
+marking-TasselTail-tasseltailtone2 = Внешняя часть

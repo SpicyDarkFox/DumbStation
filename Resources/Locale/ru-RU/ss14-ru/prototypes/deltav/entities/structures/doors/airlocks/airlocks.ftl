@@ -1,0 +1,12 @@
+ent-AirlockJustice = { ent-Airlock }
+    .suffix = Юстиция
+    .desc = { ent-Airlock.desc }
+ent-AirlockRobotics = { ent-AirlockScience }
+    .suffix = Робототехника
+    .desc = { ent-AirlockScience.desc }
+ent-AirlockJusticeGlass = { ent-AirlockGlass }
+    .suffix = Юстиция, Стеклянный
+    .desc = { ent-AirlockGlass.desc }
+ent-AirlockRoboticsGlass = { ent-AirlockScienceGlass }
+    .suffix = Робототехника, Стеклянный
+    .desc = { ent-AirlockScienceGlass.desc }

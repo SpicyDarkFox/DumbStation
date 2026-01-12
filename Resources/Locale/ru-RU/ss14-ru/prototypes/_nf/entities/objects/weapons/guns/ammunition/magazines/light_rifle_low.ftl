@@ -1,0 +1,9 @@
+ent-MagazineLightRifleLowCapacityEmpty = малоёмкий магазин (.30 винтовочные, любые)
+    .suffix = пустой
+    .desc = { ent-MagazineLightRifle.desc }
+ent-MagazineLightRifleLowCapacity = малоёмкий магазин (.30 винтовочные)
+    .desc = { ent-BaseMagazineLightRifle.desc }
+ent-MagazineLightRifleLowCapacityPractice = малоёмкий магазин (.30 винтовочные учебные)
+    .desc = { ent-MagazineLightRifleLowCapacity.desc }
+ent-MagazineLightRifleLowCapacityUranium = малоёмкий магазин (.30 винтовочные урановые)
+    .desc = { ent-MagazineLightRifleLowCapacity.desc }

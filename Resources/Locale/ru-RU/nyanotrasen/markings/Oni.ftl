@@ -1,0 +1,14 @@
+marking-OniHornSingleCurved = Один изогнутый рог
+marking-OniHornSingleCurved-single_curved = Изогнутый рог
+marking-OniHornSingleLeftCurved = Один изогнутый рог (слева)
+marking-OniHornSingleLeftCurved-single_left_curved = Изогнутый рог (слева)
+marking-OniHornSingleRightCurved = Один изогнутый рог (справа)
+marking-OniHornSingleRightCurved-single_right_curved = Изогнутый рог (справа)
+marking-OniHornDoubleCurvedOutwards = Два рога, изогнутых наружу
+marking-OniHornDoubleCurvedOutwards-double_curved_outwards = Рога, изогнутые наружу
+marking-OniHornDoubleCurved = Два изогнутых рога
+marking-OniHornDoubleCurved-double_curved = Изогнутые рога
+marking-OniHornDoubleLeftBrokeCurved = Два изогнутых рога (левый сломан)
+marking-OniHornDoubleLeftBrokeCurved-double_left_broke_curved = Изогнутые рога (левый сломан)
+marking-OniHornDoubleRightBrokeCurved = Два изогнутых рога (правый сломан)
+marking-OniHornDoubleRightBrokeCurved-double_right_broke_curved = Изогнутые рога (правый сломан)

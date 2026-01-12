@@ -1,0 +1,9 @@
+ent-AntiAnomalyZone = зона подавления аномалий
+    .desc = Аномалии не смогут появиться в радиусе 10 тайлов от этой точки.
+    .suffix = радиус 10
+ent-AntiAnomalyZone20 = { ent-AntiAnomalyZone }
+    .desc = Аномалии не смогут появиться в радиусе 20 тайлов от этой точки.
+    .suffix = радиус 20
+ent-AntiAnomalyZone50 = { ent-AntiAnomalyZone }
+    .desc = Аномалии не смогут появиться в радиусе 50 тайлов от этой точки.
+    .suffix = радиус 50

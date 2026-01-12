@@ -1,0 +1,15 @@
+cult-rune-cant-draw = Вы не можете начертить руну здесь!
+cult-rune-cant-draw-rending = Вы должны быть в месте, где завеса между мирами наиболее тонка.
+cult-rune-started-erasing = Стирание начато...
+cult-rune-erased = Руна стерта.
+cult-rune-not-enough-cultists = Недостаточно культистов для проведения ритуала!
+cult-rune-no-targets = Цели не найдены!
+cult-teleport-not-found = Руны не найдены.
+cult-revive-rune-no-charges = Невозможно провести ритуал воскрешения: не осталось зарядов.
+cult-revive-rune-already-alive = Цель уже жива.
+cult-buff-already-buffed = Вы уже наделены силой.
+cult-rending-drawing-finished = Геометр Крови закончил начертание руны конца { $location }!
+cult-rending-target-alive = Невозможно начать ритуал: цель жива.
+cult-rending-already-summoning = Невозможно начать ритуал: он уже проводится.
+cult-rending-started = Геометр Крови начал ритуал Межпространственного Разрыва { $location }!
+cult-rending-prevented = Кто-то остановил ритуал.

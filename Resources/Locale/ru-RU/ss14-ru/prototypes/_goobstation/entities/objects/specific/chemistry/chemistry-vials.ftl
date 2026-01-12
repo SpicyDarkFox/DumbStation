@@ -1,0 +1,9 @@
+ent-GoldChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = золотая
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-SilverChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = серебряная
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-UraniumChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = урановая
+    .desc = { ent-BaseChemistryEmptyVial.desc }

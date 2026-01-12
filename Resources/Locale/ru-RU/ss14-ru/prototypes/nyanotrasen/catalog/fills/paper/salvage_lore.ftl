@@ -1,0 +1,15 @@
+ent-SalvageLorePaperGamingSpawner = Генератор игровых записок по лору для Salvage
+    .desc = { ent-MarkerBase.desc }
+ent-PaperWrittenSalvageLoreGaming1 = { ent-Paper }
+    .suffix = Salvage: Лор: Игровая 1
+    .desc = { ent-Paper.desc }
+ent-PaperWrittenSalvageLoreGaming2 = { ent-Paper }
+    .suffix = Salvage: Лор: Игровая 2
+    .desc = { ent-Paper.desc }
+ent-PaperWrittenSalvageLoreGaming3 = { ent-Paper }
+    .suffix = Salvage: Лор: Игровая 3
+    .desc = { ent-Paper.desc }
+ent-PaperWrittenSalvageLoreGaming4 = { ent-Paper }
+    .suffix = Salvage: Лор: Игровая 4
+    .desc = { ent-Paper.desc }
+

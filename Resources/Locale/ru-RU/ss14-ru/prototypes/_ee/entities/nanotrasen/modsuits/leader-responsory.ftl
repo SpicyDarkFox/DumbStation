@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryLeader = контроллер лидерского модсьюта «Responsory»
+    .desc = Главный контроллер лидерского модсьюта «Responsory».
+ent-ClothingModsuitGauntletsResponsoryLeader = наручи лидерского модсьюта «Responsory»
+    .desc = Пара латных перчаток для лидерского модсьюта «Responsory».
+ent-ClothingModsuitHelmetResponsoryLeader = шлем лидерского модсьюта «Responsory»
+    .desc = Шлем передового уровня, разработанный NanoTrasen для лидерского модсьюта «Responsory». Оснащён встроенным HUD.
+ent-ClothingModsuitChestplateResponsoryLeader = нагрудник лидерского модсьюта «Responsory»
+    .desc = Нагрудник передового уровня, разработанный NanoTrasen для лидерского модсьюта «Responsory». Оснащён сервоприводами для снижения нагрузки от экипировки.
+ent-ClothingModsuitBootsResponsoryLeader = ботинки лидерского модсьюта «Responsory»
+    .desc = Передовая пара магнитных ботинок для лидерского модсьюта «Responsory». Пока костюм запитан, они не замедляют носителя.
+ent-SuitStorageResponsoryLeader = { ent-SuitStorageBase }
+    .suffix = Лидерский модсьют «Responsory»
+    .desc = { ent-SuitStorageBase.desc }

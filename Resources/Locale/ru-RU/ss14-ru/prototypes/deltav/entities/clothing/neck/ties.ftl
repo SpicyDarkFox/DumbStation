@@ -1,0 +1,12 @@
+ent-ClothingNeckTieWhite = белый галстук
+    .desc = Галстук цвета слоновой кости.
+ent-ClothingNeckTieBlack = чёрный галстук
+    .desc = Угольно-чёрный галстук.
+ent-ClothingNeckTieBrown = коричневый галстук
+    .desc = Шоколадно-коричневый галстук.
+ent-ClothingNeckTieBlue = синий галстук
+    .desc = Лазурно-синий галстук.
+ent-ClothingNeckTieGreen = зелёный галстук
+    .desc = Галстук цвета травяной зелени.
+ent-ClothingNeckTieChem = галстук химика
+    .desc = Галстук ярко-оранжевого цвета.

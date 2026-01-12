@@ -6,7 +6,7 @@ Lost Paradise — это форк [Einstein Engines](https://github.com/Simple-S
 
 Space Station 14 во многом вдохновлена Space Station 13 и работает на [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) — движке собственной разработки, написанном на C#.
 
-## Links
+## Ссылки
 
 [Сайт](https://wiki.lost-paradise.space) | [Discord](https://wiki.lost-paradise.space/discord) | [Steam(SSMV Launcher)](https://store.steampowered.com/app/2585480/Space_Station_Multiverse/) | [Steam(WizDen Launcher)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone](https://spacestationmultiverse.com/downloads/)
 
@@ -23,7 +23,7 @@ Space Station 14 во многом вдохновлена Space Station 13 и р
 Для получения общей информации по настройке среды разработки обратитесь к [руководству Space Wizards](https://docs.spacestation14.com/en/general-development/setup/setting-up-a-development-environment.html). Однако имейте в виду, что Lost Paradise отличается от оригинала, и многие вещи могут быть неприменимы.
 Для упрощения процесса мы подготовили несколько скриптов, которые приведены ниже.
 
-### Build dependencies
+### Зависимости
 
 > - Git
 > - .NET SDK 9.0.101

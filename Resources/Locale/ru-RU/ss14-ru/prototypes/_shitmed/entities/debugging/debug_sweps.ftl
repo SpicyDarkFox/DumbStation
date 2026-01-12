@@ -1,0 +1,12 @@
+ent-MeleeDebugSever = отрыватель конечностей
+    .desc = оторвёт твои части тела через неделю
+    .suffix = ДЕБАГ
+ent-MeleeDebugSever100 = отрыватель конечностей (100 урона)
+    .desc = { ent-MeleeDebugSever.desc }
+ent-MeleeDebugSever200 = отрыватель конечностей (200 урона)
+    .desc = { ent-MeleeDebugSever.desc }
+ent-MeleeDebugBurner = поджигатель конечностей
+    .desc = сожжёт твои части тела
+    .suffix = ДЕБАГ
+ent-MeleeDebugBurner200 = поджигатель конечностей (200 урона)
+    .desc = { ent-MeleeDebugBurner.desc }

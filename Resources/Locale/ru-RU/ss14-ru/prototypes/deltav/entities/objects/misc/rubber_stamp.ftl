@@ -1,0 +1,10 @@
+ent-RubberStampNotary = печать нотариуса
+    .desc = Старомодная печать из полированной бронзы для маркировки важных документов.
+ent-RubberStampChiefJustice = печать верховного судьи
+    .desc = { ent-RubberStampBase.desc }
+ent-RubberStampAdminAssistant = печать административного ассистента
+    .suffix = НЕ КАРТИРОВАТЬ
+    .desc = { ent-RubberStampBase.desc }
+ent-RubberStampCorporateLiaison = печать представителя корпорации
+    .suffix = НЕ КАРТИРОВАТЬ
+    .desc = { ent-RubberStampBase.desc }

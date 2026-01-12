@@ -1,0 +1,29 @@
+markings-search = Поиск
+marking-points-remaining = Черт осталось: { $points }
+markings-category-Face = Лицо
+marking-used = { $marking-name }
+marking-used-forced = { $marking-name } (Принудительно)
+marking-slot-add = Добавить
+marking-slot-remove = Удалить
+markings-category-RightArm = Правая рука
+markings-category-RightHand = Правая кисть
+markings-category-LeftArm = Левая рука
+markings-category-LeftHand = Левая кисть
+markings-category-RightLeg = Правая нога
+markings-category-RightFoot = Правая стопа
+markings-category-LeftLeg = Левая нога
+markings-category-LeftFoot = Левая стопа
+markings-category-Undershirt = Undershirt
+markings-category-Underwear = Underwear
+
+# Categories
+
+markings-category-Hair = Причёска
+markings-category-FacialHair = Лицевая растительность
+markings-category-Head = Голова
+markings-category-HeadTop = Голова (верх)
+markings-category-HeadSide = Голова (бок)
+markings-category-Snout = Морда
+markings-category-Chest = Грудь
+markings-category-Tail = Хвост
+markings-category-Overlay = Наложение

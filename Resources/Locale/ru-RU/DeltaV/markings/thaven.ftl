@@ -1,0 +1,10 @@
+marking-ThavenCheekBarbels-cheek_barbels = Голова
+marking-ThavenCheekBarbels = Тавен: Голова (Усики на щеках)
+marking-ThavenEyebrowBarbels-eyebrow_barbels = Голова
+marking-ThavenEyebrowBarbels = Тавен: Голова (Надбровные усики)
+marking-ThavenUnderbellyFace-underbelly_face = Голова
+marking-ThavenUnderbellyFace = Тавен: Голова (Светлое лицо)
+marking-ThavenUnderbellyTorso-underbelly_torso = Грудь
+marking-ThavenUnderbellyTorso = Тавен: Грудь (Светлое брюшко)
+marking-ThavenCarpSpots-carp_spots = Грудь
+marking-ThavenCarpSpots = Тавен: Грудь (Пятна карпа)

@@ -1,0 +1,14 @@
+ent-ClothingNeckHeadphones = headphones
+    .desc = Quality headphones from Drunk Masters, with good sound insulation.
+ent-ClothingNeckStethoscope = стетоскоп
+    .desc = Устаревший медицинский аппарат для прослушивания звуков человеческого тела. С ним вы будете выглядеть так, будто знаете, что делаете.
+ent-ActionStethoscope = Прослушать стетоскопом
+    .desc = { ent-BaseAction.desc }
+ent-ClothingNeckBling = побрякушки
+    .desc = Чертовски круто быть гангстером.
+ent-ClothingNeckLawyerbadge = значок адвоката
+    .desc = Значок, свидетельствующий что владелец является "законным" юристом, сдавшим экзамен Nanotrasen, необходимый для занятия юридической практикой.
+ent-ClothingNeckBellCollar = bell collar
+    .desc = A way to inform others about your presence, or just to annoy everyone around you!
+ent-ClothingNeckDogtags = dogtags
+    .desc = A pair of engraved metal identification tags.

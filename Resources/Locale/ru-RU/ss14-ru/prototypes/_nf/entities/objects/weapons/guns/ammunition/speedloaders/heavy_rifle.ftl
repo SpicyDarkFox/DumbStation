@@ -1,0 +1,12 @@
+ent-BaseSpeedLoaderHeavyRifle = спидлоадер (.20 винтовочные)
+    .desc = { ent-BaseItem.desc }
+ent-SpeedLoaderRifleHeavy = спидлоадер (.20 винтовочные)
+    .desc = { ent-BaseSpeedLoaderHeavyRifle.desc }
+ent-SpeedLoaderRifleHeavyEmpty = спидлоадер (.20 винтовочные, любые)
+    .desc = { ent-SpeedLoaderRifleHeavy.desc }
+ent-SpeedLoaderRifleHeavyIncendiary = спидлоадер (.20 винтовочные зажигательные)
+    .desc = { ent-BaseSpeedLoaderHeavyRifle.desc }
+ent-SpeedLoaderRifleHeavyPractice = спидлоадер (.20 винтовочные учебные)
+    .desc = { ent-BaseSpeedLoaderHeavyRifle.desc }
+ent-SpeedLoaderRifleHeavyUranium = спидлоадер (.20 винтовочные урановые)
+    .desc = { ent-BaseSpeedLoaderHeavyRifle.desc }

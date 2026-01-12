@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryJanitorial = контроллер уборочного модсьюта «Responsory»
+    .desc = Главный контроллер уборочного модсьюта «Responsory».
+ent-ClothingModsuitGauntletsResponsoryJanitorial = наручи уборочного модсьюта «Responsory»
+    .desc = Пара латных перчаток для уборочного модсьюта «Responsory».
+ent-ClothingModsuitHelmetResponsoryJanitorial = шлем уборочного модсьюта «Responsory»
+    .desc = Шлем передового уровня, разработанный NanoTrasen для уборочного модсьюта «Responsory». Оснащён встроенным HUD.
+ent-ClothingModsuitChestplateResponsoryJanitorial = нагрудник уборочного модсьюта «Responsory»
+    .desc = Нагрудник передового уровня, разработанный NanoTrasen для уборочного модсьюта «Responsory». Оснащён сервоприводами для снижения нагрузки от экипировки.
+ent-ClothingModsuitBootsResponsoryJanitorial = ботинки уборочного модсьюта «Responsory»
+    .desc = Передовая пара магнитных ботинок для уборочного модсьюта «Responsory». Пока костюм запитан, они не замедляют носителя.
+ent-SuitStorageResponsoryJanitorial = { ent-SuitStorageBase }
+    .suffix = Уборочный модсьют «Responsory»
+    .desc = { ent-SuitStorageBase.desc }

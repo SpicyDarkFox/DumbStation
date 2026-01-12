@@ -1,0 +1,9 @@
+ent-DrinkVodkaSportsDrink = водка-спортивный напиток
+    .suffix = водка - спортивный напиток!
+    .desc = { ent-DrinkGlass.desc }
+ent-DrinkRoninRefresher = «Ронин-освежитель»
+    .suffix = ронин освежитель
+    .desc = { ent-DrinkGlass.desc }
+ent-DrinkDeadlifter = «Мёртвый лифтер»
+    .suffix = deadlifter
+    .desc = { ent-DrinkGlass.desc }

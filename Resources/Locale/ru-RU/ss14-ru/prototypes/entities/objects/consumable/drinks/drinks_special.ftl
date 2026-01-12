@@ -1,0 +1,14 @@
+ent-DrinkShotGlass = стопка
+    .desc = Идеально подходит для того, чтобы со злостью ударить ей по столу.
+ent-DrinkIceBucket = ведёрко для льда
+    .desc = Специальное ведёрко с освежающим льдом. Запрещено использовать для одноимённого челленджа!
+ent-DrinkJar = jar
+    .desc = The hipster's cup.
+ent-DrinkJarWhat = jar of something
+    .desc = You can't really tell what this is.
+ent-BartenderMixer = { "" }
+    .desc = { "" }
+ent-DrinkShaker = шейкер
+    .desc = Верный, смешивающий приятель бармена. Хэй, диджей...
+ent-DrinkJigger = джиггер
+    .desc = Как шейкер, только меньше. Используется для регулировки количества ингредиентов.

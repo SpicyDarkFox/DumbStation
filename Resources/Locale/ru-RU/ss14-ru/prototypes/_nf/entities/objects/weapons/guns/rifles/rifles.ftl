@@ -1,0 +1,15 @@
+ent-WeaponRifleGestio = Gestio
+    .desc = Старый прототип марксманской винтовки NanoTrasen с режимом стрельбы очередями. Произведена Silver Industries. Она так и не вышла из стадии испытаний. Учитывая её почтенный возраст, она считается гражданским оружием. Использует винтовочные патроны калибра .30.
+ent-WeaponRifleGestioEmpty = { ent-WeaponRifleGestio }
+    .suffix = Пустая
+    .desc = { ent-WeaponRifleGestio.desc }
+ent-WeaponRifleNovaliteC1 = Novalite C1
+    .desc = Модификация винтовки «Lecter» от SW LLC; гражданская самозарядная винтовка с внутренним магазином. Представители NanoTrasen не устают подчеркивать, насколько эта винтовка соответствует всем правовым нормам. Использует винтовочные патроны калибра .20.
+ent-WeaponRifleNovaliteC1Empty = { ent-WeaponRifleNovaliteC1 }
+    .suffix = Пустая
+    .desc = { ent-WeaponRifleNovaliteC1.desc }
+ent-WeaponRifleSVT = СВТ-40
+    .desc = Когда-то боевое оружие, а ныне гражданский охотничий карабин, предоставленный S.E.S.W.C. На одной стороне выгравировано: «Отступление считается изменой».
+ent-WeaponRifleSVTEmpty = { ent-WeaponRifleSVT }
+    .suffix = Пустая
+    .desc = { ent-WeaponRifleSVT.desc }

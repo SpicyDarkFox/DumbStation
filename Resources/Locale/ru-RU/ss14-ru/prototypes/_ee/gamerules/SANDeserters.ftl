@@ -1,0 +1,9 @@
+ent-Deserters = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-SpawnPointGhostSANDeserter = точка появления призрака
+    .suffix = Дезертир SAN
+    .desc = { ent-MarkerBase.desc }
+ent-MobHumanSANDeserter = дезертир SAN
+    .desc = { ent-MobHuman.desc }
+ent-MindRoleDeserter = роль дезертира SAN
+    .desc = { ent-BaseMindRoleAntag.desc }

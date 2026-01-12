@@ -1,0 +1,15 @@
+station-event-unknown-shuttle-traveling-cuisine-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-disaster-evac-pod-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-honki-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-syndie-evac-pod-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-cruiser-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-cryptid-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-eternal-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-flatline-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-gym-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-n-t-incorporation-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-joe-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-lambordeere-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-meat-zone-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-microshuttle-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.
+station-event-unknown-shuttle-spacebus-announcement = Внимание! В вашем секторе обнаружен неопознанный космический шаттл, идущий на сближение.

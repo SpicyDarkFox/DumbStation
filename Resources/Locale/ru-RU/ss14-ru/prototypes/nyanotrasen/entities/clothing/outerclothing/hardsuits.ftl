@@ -1,0 +1,10 @@
+ent-ClothingOuterHardsuitMystagogue = скафандр мистагога
+    .desc = Лёгкий скафандр с шлемом, оснащённым передовой галактической системой псионической передачи.
+ent-ClothingOuterHardsuitSyndieReverseEngineered = боевой скафандр SA-122
+    .suffix = реверс-инжиниринг
+    .desc = { ent-ClothingOuterHardsuitSyndie.desc }
+ent-ClothingOuterHardsuitJuggernautReverseEngineered = штурмовой скафандр SA-126
+    .desc = Комплект, созданный отделом специальных закупок Nanotrasen для повышенной прочности.
+    .suffix = реверс-инжиниринг
+ent-ClothingOuterHardsuitERTCentcomm = скафандр CentCom
+    .desc = { ent-ClothingOuterHardsuitERTLeader.desc }

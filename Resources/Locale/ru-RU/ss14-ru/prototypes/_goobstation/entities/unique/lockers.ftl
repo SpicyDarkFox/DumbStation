@@ -1,0 +1,9 @@
+ent-UniqueLockerNanorepFilled = { ent-LockerNanorepFilled }
+    .suffix = МАППИНГ, Уникальный, Заполненный
+    .desc = { ent-LockerNanorepFilled.desc }
+ent-UniqueLockerBlueshieldOfficerFilled = { ent-LockerBlueshieldOfficerFilled }
+    .suffix = МАППИНГ, Уникальный, Заполненный
+    .desc = { ent-LockerBlueshieldOfficerFilled.desc }
+ent-UniqueLockerMagistrateFilled = { ent-LockerMagistrateFilled }
+    .suffix = МАППИНГ, Уникальный, Заполненный
+    .desc = { ent-LockerMagistrateFilled.desc }

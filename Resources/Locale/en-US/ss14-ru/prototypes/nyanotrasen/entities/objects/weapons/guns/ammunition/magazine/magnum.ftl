@@ -1,0 +1,15 @@
+ent-BaseMagazineUniversalMagnum = mk 32 'Universal' magazine (.45 magnum)
+    .desc = { ent-BaseMagazinePistol.desc }
+ent-MagazineUniversalMagnumEmpty = mk 32 'Universal' magazine (.45 magnum any)
+    .suffix = empty
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }
+ent-MagazineUniversalMagnum = mk 32 'Universal' magazine (.45 magnum)
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }
+ent-MagazineUniversalMagnumPractice = mk 32 'Universal' magazine (.45 magnum practice)
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }
+ent-MagazineUniversalMagnumIncendiary = mk 32 'Universal' magazine (.45 magnum incendiary)
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }
+ent-MagazineUniversalMagnumUranium = mk 32 'Universal' magazine (.45 magnum uranium)
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }
+ent-MagazineUniversalMagnumShrapnel = mk 32 'Universal' magazine (.45 magnum shrapnel)
+    .desc = { ent-BaseMagazineUniversalMagnum.desc }

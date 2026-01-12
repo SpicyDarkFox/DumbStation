@@ -1,6 +1,6 @@
-ent-SheetPrinter = paper
+ent-SheetPrinter = { ent-Paper }
     .suffix = Full
-    .desc = A piece of white paper.
+    .desc = { ent-Paper.desc }
 ent-SheetPrinter1 = { ent-SheetPrinter }
     .suffix = Single
     .desc = { ent-SheetPrinter.desc }
