@@ -30,3 +30,10 @@ Entries:
   id: 5607
   time: '2026-01-13T19:45:00.0000000+00:00'
   url: https://github.com/Lost-Paradise-Project/Main-Station/pull/7
+- author: Evgencheg
+  changes:
+    - type: Add
+      message: Добавлен перевод всего!
+  id: 5608
+  time: '2026-01-12T23:03:57.0000000+00:00'
+  url: https://github.com/Lost-Paradise-Project/Main-Station/pull/2
