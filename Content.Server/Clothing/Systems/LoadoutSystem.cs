@@ -99,7 +99,7 @@ public sealed class LoadoutSystem : EntitySystem
         // Spawn the loadout, get a list of items that failed to equip
         int sponsorTier = SponsorSimpleManager.GetTier(uid); //LP edit
         var (failedLoadouts, allLoadouts) =
-            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms, sponsorTier);
+            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms, sponsorTier);  //LP edit
 
         // Try to find back-mounted storage apparatus
         if (_inventory.TryGetSlotEntity(uid, "back", out var item) &&

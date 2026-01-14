@@ -68,10 +68,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
     /// </summary>
-    public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true, int sponsorTier = 0)
+    public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true, int sponsorTier = 0)  //LP edit
     {
         PrototypeManager.TryIndex(startingGear, out var gearProto);
-        EquipStartingGear(entity, gearProto, sponsorTier: sponsorTier);
+        EquipStartingGear(entity, gearProto, sponsorTier: sponsorTier);     //LP edit
     }
 
     /// <summary>
@@ -177,7 +177,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     //   Apply a starting gear's sub-gears to itself, returning a new starting gear prototype with
     //   replaced equipment.
     // </summary>
-    public StartingGearPrototype ApplySubGear(StartingGearPrototype startingGear, HumanoidCharacterProfile profile, JobPrototype? job = null, int sponsorTier = 0)
+    public StartingGearPrototype ApplySubGear(StartingGearPrototype startingGear, HumanoidCharacterProfile profile, JobPrototype? job = null, int sponsorTier = 0)  //LP edit
     {
         if (startingGear.SubGears.Count == 0)
             return startingGear;
@@ -194,11 +194,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 !_characterRequirements.CheckRequirementsValid(
                     subGearProto.Requirements, job, profile, new Dictionary<string, TimeSpan>(), false, job,
                     EntityManager, PrototypeManager, _configurationManager,
-                    out _, sponsorTier))
+                    out _, sponsorTier))    //LP edit
                 continue;
 
             // Apply the sub-gear's sub-gears if there are any
-            subGearProto = ApplySubGear(subGearProto, profile, job, sponsorTier);
+            subGearProto = ApplySubGear(subGearProto, profile, job, sponsorTier);   //LP edit
 
             if (!foundConditionalMatch)
             {

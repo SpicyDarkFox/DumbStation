@@ -32,6 +32,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField(required: true)]
     public bool RoundStart { get; private set; } = false;
 
+    //LP edit
     [DataField]
     public int SponsorTier = 0;
 

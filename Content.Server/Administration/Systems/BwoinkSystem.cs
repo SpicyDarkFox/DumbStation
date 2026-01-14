@@ -560,7 +560,7 @@ namespace Content.Server.Administration.Systems
             _relayMessages[userId] = existingEmbed;
 
             // Actually do the on call relay last, we just need to grab it before we dequeue every message above.
-            if (onCallRelay &&        //LP edit отключение дс вебхуков от ЕЕ
+            if (onCallRelay &&
                 _onCallData != null)
             {
                 existingEmbed.OnCall = true;

@@ -71,7 +71,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <remarks>
     /// This only spawns the character, and does none of the mind-related setup you'd need for it to be playable.
     /// </remarks>
-    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsorTier = 0)
+    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsorTier = 0) //LP edit
     {
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
@@ -103,7 +103,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
        HumanoidCharacterProfile? profile,
        EntityUid? station,
        EntityUid? entity = null,
-       int sponsorTier = 0)
+       int sponsorTier = 0)     //LP edit
     {
         _prototypeManager.TryIndex(job ?? string.Empty, out var prototype);
 
@@ -249,12 +249,12 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
 
     public readonly int sponsorTier;    //LP edit
 
-    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsortier = 0)
+    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsortier = 0)   //LP edit
     {
         Job = job;
         HumanoidCharacterProfile = humanoidCharacterProfile;
         Station = station;
         DesiredSpawnPointType = spawnPointType;
-        sponsorTier = sponsortier;
+        sponsorTier = sponsortier;      //LP edit
     }
 }

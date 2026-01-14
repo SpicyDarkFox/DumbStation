@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 using Content.Server.Silicon.IPC;
 using Content.Shared.Radio.Components;
 using Content.Shared.Cluwne;
-using Content.Server._LP.Sponsors;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Administration.Commands
 {

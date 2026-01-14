@@ -19,7 +19,7 @@ using Content.Shared.Players;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
-using Content.Server._LP.Sponsors;
+using Content.Server._LP.Sponsors;  //LP edit
 
 
 namespace Content.Server._Goobstation.Ghostbar;
