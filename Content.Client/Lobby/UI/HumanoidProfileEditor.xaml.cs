@@ -1881,6 +1881,7 @@ namespace Content.Client.Lobby.UI
                 //LP edit end
                 List<string> marks = new();
                 var sponsorTier = SponsorSimpleManager.GetTier();
+#if LP
                 if (IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsorInfo))
                 {
                     sponsorTier = sponsorInfo.Tier;
@@ -1891,6 +1892,7 @@ namespace Content.Client.Lobby.UI
                         marks.AddRange(sponsormarks);
                     }
                 }
+#endif
                 //LP edit end
 
                 var profile = _entManager.System<HumanoidAppearanceSystem>().FromStream(file, _playerManager.LocalSession!, marks, sponsorTier);    //LP edit
