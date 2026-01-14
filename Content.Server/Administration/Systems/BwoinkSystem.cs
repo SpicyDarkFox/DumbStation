@@ -90,11 +90,11 @@ namespace Content.Server.Administration.Systems
         {
             base.Initialize();
 
-            // Subs.CVar(_config, CCVars.DiscordOnCallWebhook, OnCallChanged, true);        //LP edit удалено
+            Subs.CVar(_config, CCVars.DiscordOnCallWebhook, OnCallChanged, true);
 
-            // Subs.CVar(_config, CCVars.DiscordAHelpWebhook, OnWebhookChanged, true);
-            // Subs.CVar(_config, CCVars.DiscordAHelpFooterIcon, OnFooterIconChanged, true);
-            // Subs.CVar(_config, CCVars.DiscordAHelpAvatar, OnAvatarChanged, true);
+            Subs.CVar(_config, CCVars.DiscordAHelpWebhook, OnWebhookChanged, true);
+            Subs.CVar(_config, CCVars.DiscordAHelpFooterIcon, OnFooterIconChanged, true);
+            Subs.CVar(_config, CCVars.DiscordAHelpAvatar, OnAvatarChanged, true);
             Subs.CVar(_config, CVars.GameHostName, OnServerNameChanged, true);
             Subs.CVar(_config, CCVars.AdminAhelpOverrideClientName, OnOverrideChanged, true);
             _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("AHELP");
