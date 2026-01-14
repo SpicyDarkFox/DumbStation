@@ -13,9 +13,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 //LP edit start
 using Content.Shared.Humanoid.Markings;
-#if LP
 using Content.Server._LP.Sponsors;
-#endif
 //LP edit end
 
 
