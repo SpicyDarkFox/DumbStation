@@ -202,12 +202,15 @@ namespace Content.Server.Preferences.Managers
         {
             if (!ShouldStorePrefs(session.Channel.AuthType))
             {
+#if LP
+                await _sponsors.WaitForSponsorInfoLoaded(session.UserId);
+#endif
                 // Don't store data for guests.
                 var prefsData = new PlayerPrefData
                 {
                     PrefsLoaded = true,
                     Prefs = new PlayerPreferences(
-                        new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random()) },
+                        new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random(null, SponsorSimpleManager.GetTier(session.UserId))) }, //LP edit
                         0, Color.Transparent)
                 };
 
@@ -216,16 +219,8 @@ namespace Content.Server.Preferences.Managers
             else
             {
                 var prefsData = new PlayerPrefData();
-                var loadTask = LoadPrefs();
                 _cachedPlayerPrefs[session.UserId] = prefsData;
-
-                await loadTask;
-
-                async Task LoadPrefs()
-                {
-                    var prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);
-                    prefsData.Prefs = prefs;
-                }
+                prefsData.Prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);    //LP edit
             }
         }
 
