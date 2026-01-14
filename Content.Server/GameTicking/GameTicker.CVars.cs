@@ -56,22 +56,22 @@ namespace Content.Server.GameTicking
                 // TODO why tf is the server name on admin logs
                 ServerName = value;
             }, true);
-            /* Subs.CVar(_cfg, CCVars.DiscordRoundUpdateWebhook, value =>    //LP edit отключено из-за замены
-             {
-                 if (!string.IsNullOrWhiteSpace(value))
-                 {
-                     _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
-                 }
-             }, true);
-             Subs.CVar(_cfg, CCVars.DiscordRoundEndRoleWebhook, value =>
-             {
-                 DiscordRoundEndRole = value;
+            Subs.CVar(_cfg, CCVars.DiscordRoundUpdateWebhook, value =>
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
+                }
+            }, true);
+            Subs.CVar(_cfg, CCVars.DiscordRoundEndRoleWebhook, value =>
+            {
+                DiscordRoundEndRole = value;
 
-                 if (value == string.Empty)
-                 {
-                     DiscordRoundEndRole = null;
-                 }
-             }, true);*/
+                if (value == string.Empty)
+                {
+                    DiscordRoundEndRole = null;
+                }
+            }, true);
             Subs.CVar(_cfg, CCVars.RoundEndSoundCollection, value => RoundEndSoundCollection = value, true);
 #if EXCEPTION_TOLERANCE
             Subs.CVar(_cfg, CCVars.RoundStartFailShutdownCount, value => RoundStartFailShutdownCount = value, true);
