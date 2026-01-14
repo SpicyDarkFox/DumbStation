@@ -18,6 +18,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Chat.Managers;
 
@@ -26,14 +27,6 @@ namespace Content.Server.Chat.Managers;
 /// </summary>
 internal sealed partial class ChatManager : IChatManager
 {
-    private static readonly Dictionary<string, string> PatronOocColors = new()
-    {
-        // I had plans for multiple colors and those went nowhere so...
-        { "nuclear_operative", "#aa00ff" },
-        { "syndicate_agent", "#aa00ff" },
-        { "revolutionary", "#aa00ff" }
-    };
-
     [Dependency] private readonly IReplayRecordingManager _replay = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly IMoMMILink _mommiLink = default!;
@@ -252,12 +245,31 @@ internal sealed partial class ChatManager : IChatManager
         if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
-            colorOverride = prefs.AdminOOCColor;
         }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
+        //LP edit start
+#if LP
+        if (IoCManager.Resolve<SponsorsManager>().TryGetInfo(player.UserId, out var sponsorData) && sponsorData.Tier > 0)
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", sponsorData.OOCColor), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         }
+
+        var adminData = _adminManager.GetAdminData(player);
+        if (adminData != null && sponsorData != null && sponsorData.Tier > 0)
+        {
+            var title = adminData.Title ?? "Admin";
+            var prefs = _preferencesManager.GetPreferences(player.UserId);
+            wrappedMessage = Loc.GetString(
+                "chat-manager-send-ooc-admin-sponsor-wrap-message", ("adminColor", prefs.AdminOOCColor), ("adminTitle", title), ("patronColor", sponsorData.OOCColor), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        }
+        else if (adminData != null)
+        {
+            var title = adminData.Title ?? "Admin";
+            var prefs = _preferencesManager.GetPreferences(player.UserId);
+            wrappedMessage = Loc.GetString(
+                "chat-manager-send-ooc-admin-wrap-message", ("adminTitle", title), ("adminColor", prefs.AdminOOCColor), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        }
+#endif
+        //LP edit end
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
         ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride, author: player.UserId);

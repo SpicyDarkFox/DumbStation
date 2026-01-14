@@ -33,6 +33,8 @@ chat-manager-send-dead-chat-wrap-message = { $deadChannelName }: [bold][BubbleHe
 chat-manager-send-admin-dead-chat-wrap-message = { $adminChannelName }: [bold]([BubbleHeader]{ $userName }[/BubbleHeader]):[/bold] [BubbleContent]{ $message }[/BubbleContent]
 chat-manager-send-admin-chat-wrap-message = { $adminChannelName }: [bold]{ $playerName }:[/bold] { $message }
 chat-manager-send-admin-announcement-wrap-message = [bold]{ $adminChannelName }: { $message }[/bold]
+chat-manager-send-ooc-admin-wrap-message = OOC: [bold][color={ $adminColor }]\[{ $adminTitle }\][/color]{ $playerName }:[/bold] { $message }
+chat-manager-send-ooc-admin-sponsor-wrap-message = OOC: [bold][color={ $adminColor }]\[{ $adminTitle }\][/color] [color={ $patronColor }]{ $playerName }:[/color][/bold] { $message }
 chat-manager-send-hook-ooc-wrap-message = OOC: [bold](D){ $senderName }:[/bold] { $message }
 chat-manager-dead-channel-name = МЁРТВЫЕ
 chat-manager-admin-channel-name = АДМИН
