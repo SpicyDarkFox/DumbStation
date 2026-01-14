@@ -84,7 +84,8 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             baseCoords,
             args.Job,
             args.HumanoidCharacterProfile,
-            args.Station);
+            args.Station,
+            null, args.sponsorTier);    //LP edit
 
         _random.Shuffle(possibleContainers);
         foreach (var (uid, spawnPoint, manager, xform) in possibleContainers)

@@ -14,6 +14,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Server._LP.Sponsors;
 
 // This literally only exists because haha felinid oni
 namespace Content.Server.DeltaV.Administration.Commands;
@@ -123,7 +124,7 @@ public sealed class LoadCharacter : IConsoleCommand
             : EntitySystem.Get<GameTicker>().GetObserverSpawnPoint();
 
         EntitySystem.Get<StationSpawningSystem>()
-            .SpawnPlayerMob(coordinates, profile: character, entity: target, job: null, station: null);
+            .SpawnPlayerMob(coordinates, profile: character, entity: target, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId));
 
         shell.WriteLine(Loc.GetString("loadcharacter-command-complete"));
     }

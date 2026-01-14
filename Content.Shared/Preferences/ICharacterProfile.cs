@@ -14,11 +14,11 @@ namespace Content.Shared.Preferences
         /// <summary>
         ///     Makes this profile valid so there's no bad data like negative ages.
         /// </summary>
-        void EnsureValid(ICommonSession session, IDependencyCollection collection);
+        void EnsureValid(ICommonSession session, IDependencyCollection collection, List<string>? allowedMarkings = null, int sponsorTier = 0);  //LP edit
 
         /// <summary>
         /// Gets a copy of this profile that has <see cref="EnsureValid"/> applied, i.e. no invalid data.
         /// </summary>
-        ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection);
+        ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, List<string>? allowedMarkings = null, int sponsorTier = 0);   //LP edit
     }
 }

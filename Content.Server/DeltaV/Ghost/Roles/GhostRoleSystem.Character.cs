@@ -1,4 +1,5 @@
-﻿using Content.Server.Administration.Commands;
+﻿using Content.Server._LP.Sponsors;
+using Content.Server.Administration.Commands;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Preferences.Managers;
@@ -29,7 +30,7 @@ namespace Content.Server.Ghost.Roles
             var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Player.UserId).SelectedCharacter;
 
             var mob = _entityManager.System<StationSpawningSystem>()
-                .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
+                .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null, null, SponsorSimpleManager.GetTier(uid));    //LP edit
             _transform.AttachToGridOrMap(mob);
 
             string? outfit = null;

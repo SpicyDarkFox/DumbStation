@@ -23,6 +23,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Players.PlayTimeTracking;
 
@@ -208,6 +209,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         }
 
         var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
+        int sponsorTier = SponsorSimpleManager.GetTier(player.UserId);   //LP edit
 
         return _characterRequirements.CheckRequirementsValid(
             requirements,
@@ -219,7 +221,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             EntityManager,
             _prototypes,
             _cfg,
-            out _);
+            out _, 0, null, sponsorTier);   //LP edit
     }
 
     public HashSet<ProtoId<JobPrototype>> GetDisallowedJobs(ICommonSession player)
@@ -235,6 +237,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         }
 
         var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
+        int sponsorTier = SponsorSimpleManager.GetTier(player.UserId);   //LP edit
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
@@ -250,7 +253,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 EntityManager,
                 _prototypes,
                 _cfg,
-                out _))
+                out _, 0, null, sponsorTier))   //LP edit
                 continue;
 
             roles.Add(job.ID);
@@ -273,6 +276,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         }
 
         var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
+        int sponsorTier = SponsorSimpleManager.GetTier(player.UserId);   //LP edit
 
         for (var i = 0; i < jobs.Count; i++)
         {
@@ -294,7 +298,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 EntityManager,
                 _prototypes,
                 _cfg,
-                out _))
+                out _, 0, null, sponsorTier))   //LP edit
                 continue;
 
             jobs.RemoveSwap(i);

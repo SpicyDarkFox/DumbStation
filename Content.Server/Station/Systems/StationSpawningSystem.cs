@@ -71,12 +71,12 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <remarks>
     /// This only spawns the character, and does none of the mind-related setup you'd need for it to be playable.
     /// </remarks>
-    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset)
+    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsorTier = 0)
     {
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
-        var ev = new PlayerSpawningEvent(job, profile, station, spawnPointType);
+        var ev = new PlayerSpawningEvent(job, profile, station, spawnPointType, sponsorTier);   //LP edit
 
         RaiseLocalEvent(ev);
         DebugTools.Assert(ev.SpawnResult is { Valid: true } or null);
@@ -97,12 +97,13 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <param name="station">The station this player is being spawned on.</param>
     /// <param name="entity">The entity to use, if one already exists.</param>
     /// <returns>The spawned entity</returns>
-     public EntityUid SpawnPlayerMob(
-        EntityCoordinates coordinates,
-        ProtoId<JobPrototype>? job,
-        HumanoidCharacterProfile? profile,
-        EntityUid? station,
-        EntityUid? entity = null)
+    public EntityUid SpawnPlayerMob(
+       EntityCoordinates coordinates,
+       ProtoId<JobPrototype>? job,
+       HumanoidCharacterProfile? profile,
+       EntityUid? station,
+       EntityUid? entity = null,
+       int sponsorTier = 0)
     {
         _prototypeManager.TryIndex(job ?? string.Empty, out var prototype);
 
@@ -141,9 +142,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
             if (profile != null)
-                startingGear = ApplySubGear(startingGear, profile, prototype);
+                startingGear = ApplySubGear(startingGear, profile, prototype, sponsorTier); //LP edit
 
-            EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
+            EquipStartingGear(entity.Value, startingGear, raiseEvent: false, sponsorTier: sponsorTier); //LP edit
             _internalEncryption.TryInsertEncryptionKey(entity.Value, startingGear, EntityManager);
         }
 
@@ -246,11 +247,14 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// </summary>
     public readonly SpawnPointType DesiredSpawnPointType;
 
-    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset)
+    public readonly int sponsorTier;    //LP edit
+
+    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset, int sponsortier = 0)
     {
         Job = job;
         HumanoidCharacterProfile = humanoidCharacterProfile;
         Station = station;
         DesiredSpawnPointType = spawnPointType;
+        sponsorTier = sponsortier;
     }
 }

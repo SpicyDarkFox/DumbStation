@@ -11,6 +11,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server._EE.Contractors.Systems;
 
@@ -64,7 +65,7 @@ public sealed class EmployerSystem : EntitySystem
             jobPrototypeToUse,
             profile, playTimes, whitelisted, employerPrototype,
             EntityManager, _prototype, _configuration,
-            out _))
+            out _, 0, null, SponsorSimpleManager.GetTier(uid)))  //LP edit
             return;
 
         AddEmployer(uid, employerPrototype);

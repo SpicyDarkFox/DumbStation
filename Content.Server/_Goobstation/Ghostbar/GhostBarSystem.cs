@@ -19,6 +19,7 @@ using Content.Shared.Players;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
+using Content.Server._LP.Sponsors;
 
 
 namespace Content.Server._Goobstation.Ghostbar;
@@ -99,7 +100,7 @@ public sealed class GhostBarSystem : EntitySystem
         var randomSpawnPoint = _random.Pick(spawnPoints);
         var randomJob = _random.Pick(_jobComponents);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
-        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
+        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId));   //LP edit
 
         // Einstein Engines start - apply loadouts and traits
         var playTimes = _playTimeTracking.GetTrackerTimes(player);

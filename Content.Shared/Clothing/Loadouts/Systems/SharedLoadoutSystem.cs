@@ -48,7 +48,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             return;
 
         var proto = _prototype.Index(_random.Pick(component.StartingGear));
-        _station.EquipStartingGear(uid, proto);
+        _station.EquipStartingGear(uid, proto, sponsorTier: 0);     //LP ATTENTION!!! ищите аналогичные метки при проблемах с лодаутами спонсоров. заменить на 9
     }
 
     public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(
@@ -57,10 +57,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        int sponsorTier = 0)    //LP edit       // ATTENTION!!! ЕСЛИ У КОГО-ТО НЕТ СПОНСОРСКИХ ЛОДАУТОВ, ТО ЗАМЕНИТЕ НА 9
     {
         var jobPrototype = _prototype.Index(job);
-        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms);
+        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms, sponsorTier);   //LP edit
     }
 
     /// <summary>
@@ -79,7 +80,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        int sponsorTier = 0)    //LP edit
     {
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
@@ -98,7 +100,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             if (!_characterRequirements.CheckRequirementsValid(
                 loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
                 EntityManager, _prototype, _configuration,
-                out _))
+                out _, 0, null, sponsorTier))   //LP edit
                 continue;
 
             // Spawn the loadout items

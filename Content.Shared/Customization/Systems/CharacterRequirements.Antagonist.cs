@@ -29,7 +29,9 @@ public sealed partial class CharacterAntagonistRequirement : CharacterRequiremen
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         // Considering this will not be used in the character creation menu, players will likely never see this text.
         reason = Loc.GetString("character-antagonist-requirement", ("inverted", Inverted));

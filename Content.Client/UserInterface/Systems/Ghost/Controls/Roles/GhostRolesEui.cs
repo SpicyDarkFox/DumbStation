@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Client._LP.Sponsors;  //LP edit
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
@@ -105,6 +106,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var groupedRoles = ghostState.GhostRoles.GroupBy(
                 role => (role.Name, role.Description, role.Requirements));
 
+            int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+
             // Add a new entry for each role group
             foreach (var group in groupedRoles)
             {
@@ -123,7 +126,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                     entityManager,
                     protoMan,
                     configManager,
-                    out var reasons))
+                    out var reasons, 0, null, sponsorTier)) //LP edit
                     hasAccess = false;
 
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);

@@ -18,6 +18,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Clothing.Systems;
 
@@ -96,8 +97,9 @@ public sealed class LoadoutSystem : EntitySystem
         JobPrototype? jobProto = null)
     {
         // Spawn the loadout, get a list of items that failed to equip
+        int sponsorTier = SponsorSimpleManager.GetTier(uid); //LP edit
         var (failedLoadouts, allLoadouts) =
-            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms);
+            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms, sponsorTier);
 
         // Try to find back-mounted storage apparatus
         if (_inventory.TryGetSlotEntity(uid, "back", out var item) &&

@@ -44,6 +44,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField]
         public string PreviewDirection { get; private set; } = "South";
 
+        //LP edit
+        [DataField]
+        public bool SponsorOnly = false;
+
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 

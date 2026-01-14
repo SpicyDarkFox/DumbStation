@@ -8,6 +8,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Thief.Systems;
 
@@ -72,6 +73,8 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
 
         Dictionary<int, ThiefBackpackSetInfo> data = new();
 
+        int sponsorTier = SponsorSimpleManager.GetTier(user); //LP edit
+
         for (int i = 0; i < component.PossibleSets.Count; i++)
         {
             var set = _proto.Index(component.PossibleSets[i]);
@@ -81,7 +84,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
                 appearance.LastProfileLoaded != null &&
                 !_characterRequirements.CheckRequirementsValid(
                     set.Requirements, new JobPrototype() /* not gonna bother with jobs */,
-                    appearance.LastProfileLoaded, new Dictionary<string, TimeSpan>(), false, set, EntityManager, _proto, _config, out _))
+                    appearance.LastProfileLoaded, new Dictionary<string, TimeSpan>(), false, set, EntityManager, _proto, _config, out _, 0, null, sponsorTier)) //LP edit
                 continue;
 
             var selected = component.SelectedSets.Contains(i);

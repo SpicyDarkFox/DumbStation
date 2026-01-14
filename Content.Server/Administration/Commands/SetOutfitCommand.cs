@@ -9,6 +9,7 @@ using Robust.Shared.Prototypes;
 using Content.Server.Silicon.IPC;
 using Content.Shared.Radio.Components;
 using Content.Shared.Cluwne;
+using Content.Server._LP.Sponsors;
 
 namespace Content.Server.Administration.Commands
 {
@@ -86,7 +87,7 @@ namespace Content.Server.Administration.Commands
             }
 
             var stationSpawning = entityManager.System<SharedStationSpawningSystem>();
-            stationSpawning.EquipStartingGear(target, startingGear);
+            stationSpawning.EquipStartingGear(target, startingGear, sponsorTier: SponsorSimpleManager.GetTier(target)); //LP edit
 
             if (entityManager.HasComponent<CluwneComponent>(target)
                 || !entityManager.HasComponent<EncryptionKeyHolderComponent>(target))

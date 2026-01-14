@@ -25,6 +25,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Client._LP.Sponsors;  //LP edit
 
 namespace Content.Client.Lobby.UI;
 
@@ -270,33 +271,34 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         void MakeTooltipTree(BoxContainer box, List<CharacterRequirement> requirements)
         {
+            int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
             foreach (var requirement in requirements)
             {
                 if (requirement is CharacterLogicRequirement logicRequirement)
                 {
                     requirement.IsValid(
                         highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), loadout,
-                        entityManager, prototypeManager, configManager, out var reason);
+                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier);  //LP edit
                     box.AddChild(new RichTextLabel { Text = reason?.Split("\n")[0], Margin = new(8, 2), });
                     var newBox = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, };
                     box.AddChild(new PanelContainer
+                    {
+                        PanelOverride = new StyleBoxFlat
                         {
-                            PanelOverride = new StyleBoxFlat
-                            {
-                                BackgroundColor = Color.FromHex("#1B1B1C"),
-                                BorderColor = Color.FromHex("#3A3A3D"),
-                                BorderThickness = new(1),
-                            },
-                            Margin = new(8, 2),
-                            Children = { newBox, },
-                        });
+                            BackgroundColor = Color.FromHex("#1B1B1C"),
+                            BorderColor = Color.FromHex("#3A3A3D"),
+                            BorderThickness = new(1),
+                        },
+                        Margin = new(8, 2),
+                        Children = { newBox, },
+                    });
                     MakeTooltipTree(newBox, logicRequirement.Requirements);
                 }
                 else
                 {
                     requirement.IsValid(
                         highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), loadout,
-                        entityManager, prototypeManager, configManager, out var reason);
+                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier);  //LP edit
                     box.AddChild(new RichTextLabel
                     {
                         Text = reason,

@@ -29,6 +29,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server._LP.Sponsors;
 
 namespace Content.Server.Antag;
 
@@ -336,7 +337,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
 
         EntityManager.AddComponents(player, def.Components);
-        _stationSpawning.EquipStartingGear(player, def.StartingGear);
+        _stationSpawning.EquipStartingGear(player, def.StartingGear, sponsorTier: session != null ? SponsorSimpleManager.GetTier(session.UserId) : 0);    //LP edit
 
         if (session != null)
         {

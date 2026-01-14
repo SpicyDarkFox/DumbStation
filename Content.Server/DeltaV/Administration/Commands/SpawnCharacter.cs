@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._LP.Sponsors;
 using Content.Server.Administration;
 using Content.Server.GameTicking;
 using Content.Server.Players;
@@ -83,7 +84,7 @@ public sealed class SpawnCharacter : IConsoleCommand
 
 
         mindSystem.TransferTo(mindId, _entityManager.System<StationSpawningSystem>()
-            .SpawnPlayerMob(coordinates, profile: character, entity: null, job: null, station: null));
+            .SpawnPlayerMob(coordinates, profile: character, entity: null, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId)));
 
         shell.WriteLine(Loc.GetString("spawncharacter-command-complete"));
     }

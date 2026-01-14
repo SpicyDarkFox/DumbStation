@@ -34,7 +34,9 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         var jobs = new List<string>();
         var depts = prototypeManager.EnumeratePrototypes<DepartmentPrototype>();
@@ -86,7 +88,9 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         var departments = new List<string>();
 
@@ -134,7 +138,9 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -207,7 +213,9 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -270,7 +278,9 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))

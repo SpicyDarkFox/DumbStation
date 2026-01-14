@@ -29,7 +29,9 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         reason = null;
         if (!configManager.IsCVarRegistered("whitelist.enabled"))

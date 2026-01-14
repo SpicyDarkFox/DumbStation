@@ -37,11 +37,13 @@ public sealed partial class CharacterLogicAndRequirement : CharacterLogicRequire
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         var succeeded = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>()
             .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager,
-                prototypeManager, configManager, out var reasons, depth + 1);
+                prototypeManager, configManager, out var reasons, depth + 1, sponsorTier: sponsorTier); //LP edit
 
         if (reasons.Count == 0)
         {
@@ -77,7 +79,9 @@ public sealed partial class CharacterLogicOrRequirement : CharacterLogicRequirem
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         var succeeded = false;
         var reasons = new List<string>();
@@ -86,7 +90,7 @@ public sealed partial class CharacterLogicOrRequirement : CharacterLogicRequirem
         foreach (var requirement in Requirements)
         {
             if (characterRequirements.CheckRequirementValid(requirement, job, profile, playTimes, whitelisted, prototype,
-                entityManager, prototypeManager, configManager, out var raisin, depth + 1))
+                entityManager, prototypeManager, configManager, out var raisin, depth + 1, sponsorTier)) //LP edit
             {
                 succeeded = true;
                 break;
@@ -130,7 +134,9 @@ public sealed partial class CharacterLogicXorRequirement : CharacterLogicRequire
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null)
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
+        )
     {
         var reasons = new List<string>();
         var succeeded = false;
@@ -139,7 +145,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterLogicRequire
         foreach (var requirement in Requirements)
         {
             if (characterRequirements.CheckRequirementValid(requirement, job, profile, playTimes, whitelisted, prototype,
-                entityManager, prototypeManager, configManager, out var raisin, depth + 1))
+                entityManager, prototypeManager, configManager, out var raisin, depth + 1, sponsorTier))    //LP edit
             {
                 if (succeeded)
                 {

@@ -68,10 +68,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
     /// </summary>
-    public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true)
+    public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true, int sponsorTier = 0)
     {
         PrototypeManager.TryIndex(startingGear, out var gearProto);
-        EquipStartingGear(entity, gearProto);
+        EquipStartingGear(entity, gearProto, sponsorTier: sponsorTier);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <param name="entity">Entity to load out.</param>
     /// <param name="startingGear">Starting gear to use.</param>
     /// <param name="raiseEvent">Should we raise the event for equipped. Set to false if you will call this manually</param>
-    public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true)
+    public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true, int sponsorTier = 0)   //LP edit
     {
         if (startingGear == null)
             return;
 
         if (GetProfile(entity, out var profile))
             // Equip any sub-gears of this starting gear.
-            startingGear = ApplySubGear(startingGear, profile);
+            startingGear = ApplySubGear(startingGear, profile, sponsorTier: sponsorTier);   //LP edit
 
         var xform = _xformQuery.GetComponent(entity);
 
@@ -177,7 +177,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     //   Apply a starting gear's sub-gears to itself, returning a new starting gear prototype with
     //   replaced equipment.
     // </summary>
-    public StartingGearPrototype ApplySubGear(StartingGearPrototype startingGear, HumanoidCharacterProfile profile, JobPrototype? job = null)
+    public StartingGearPrototype ApplySubGear(StartingGearPrototype startingGear, HumanoidCharacterProfile profile, JobPrototype? job = null, int sponsorTier = 0)
     {
         if (startingGear.SubGears.Count == 0)
             return startingGear;
@@ -194,11 +194,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 !_characterRequirements.CheckRequirementsValid(
                     subGearProto.Requirements, job, profile, new Dictionary<string, TimeSpan>(), false, job,
                     EntityManager, PrototypeManager, _configurationManager,
-                    out _))
+                    out _, sponsorTier))
                 continue;
 
             // Apply the sub-gear's sub-gears if there are any
-            subGearProto = ApplySubGear(subGearProto, profile, job);
+            subGearProto = ApplySubGear(subGearProto, profile, job, sponsorTier);
 
             if (!foundConditionalMatch)
             {

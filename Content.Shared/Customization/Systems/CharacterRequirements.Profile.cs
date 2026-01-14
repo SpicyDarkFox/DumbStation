@@ -40,7 +40,8 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         var localeString = "";
@@ -79,7 +80,8 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         reason = Loc.GetString(
@@ -110,7 +112,8 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         reason = Loc.GetString(
@@ -141,7 +144,8 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "green";
@@ -184,7 +188,8 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "yellow";
@@ -231,7 +236,8 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "yellow";
@@ -278,7 +284,8 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "green";
@@ -329,7 +336,8 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "lightblue";
@@ -363,7 +371,8 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         const string color = "lightblue";
@@ -397,7 +406,8 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
+        MindComponent? mind = null,
+        int sponsorTier = 0 //LP edit
     )
     {
         var group = prototypeManager.Index(Group);

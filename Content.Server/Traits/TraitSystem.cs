@@ -21,6 +21,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Traits;
 
@@ -87,6 +88,7 @@ public sealed class TraitSystem : EntitySystem
             }
         }
 
+        int sponsorTier = SponsorSimpleManager.GetTier(uid); //LP edit
         sortedTraits.Sort();
         var traitsToAdd = new List<TraitPrototype>();
         foreach (var traitPrototype in sortedTraits)
@@ -96,7 +98,7 @@ public sealed class TraitSystem : EntitySystem
                 jobPrototypeToUse,
                 profile, playTimes, whitelisted, traitPrototype,
                 EntityManager, _prototype, _configuration,
-                out _))
+                out _, 0, null, sponsorTier))   //LP edit
                 continue;
 
             // To check for cheaters. :FaridaBirb.png:

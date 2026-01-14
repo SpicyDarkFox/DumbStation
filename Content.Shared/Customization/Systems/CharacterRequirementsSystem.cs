@@ -29,14 +29,14 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     public bool CheckRequirementValid(CharacterRequirement requirement, JobPrototype job,
         HumanoidCharacterProfile profile, IReadOnlyDictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out string? reason, int depth = 0)
+        out string? reason, int depth = 0, int sponsorTier = 0) //LP edit
     {
         // Return false if the requirement is invalid and not inverted
         // If it's inverted return false when it's valid
         return
             !requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
                 entityManager, prototypeManager, configManager,
-                out reason, depth)
+                out reason, depth, null, sponsorTier)   //LP edit
                 ? requirement.Inverted
                 : !requirement.Inverted;
     }
@@ -51,7 +51,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     /// <param name="depth">Current recursion depth for nested requirements.</param>
     /// <param name="whitelisted">Whether the character is whitelisted.</param>
     /// <returns>True if all requirements are met, false otherwise.</returns>
-    public bool CheckRequirementsValid(List<CharacterRequirement> requirements, EntityUid characterUid, IPrototype prototype, out List<string> reasons, int depth = 0, bool whitelisted = false)
+    public bool CheckRequirementsValid(List<CharacterRequirement> requirements, EntityUid characterUid, IPrototype prototype, out List<string> reasons, int depth = 0, bool whitelisted = false, int sponsorTier = 0) //LP edit
     {
         reasons = new List<string>();
 
@@ -62,13 +62,13 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             || !_playtimeManager.TryGetTrackerTimes(mind.Session, out var trackerTimes))
             return false;
 
-        return CheckRequirementsValid(requirements, jobPrototype, stationSpawningProfile, trackerTimes, whitelisted, prototype, _entManager, _protomanager, _configurationManager, out reasons, depth, mind);
+        return CheckRequirementsValid(requirements, jobPrototype, stationSpawningProfile, trackerTimes, whitelisted, prototype, _entManager, _protomanager, _configurationManager, out reasons, depth, mind, sponsorTier);//LP edit
     }
 
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, IReadOnlyDictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out List<string> reasons, int depth = 0, MindComponent? mind = null)
+        out List<string> reasons, int depth = 0, MindComponent? mind = null, int sponsorTier = 0) //LP edit
     {
         reasons = new List<string>();
         var valid = true;
@@ -79,7 +79,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             // If it's inverted set valid to false when it's valid
             if (!requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
                 entityManager, prototypeManager, configManager,
-                out var reason, depth, mind))
+                out var reason, depth, mind, sponsorTier))  //LP edit
             {
                 if (valid)
                     valid = requirement.Inverted;

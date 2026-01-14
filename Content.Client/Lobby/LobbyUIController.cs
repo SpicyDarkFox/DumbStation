@@ -27,6 +27,7 @@ using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
 using HumanoidProfileEditor = Content.Client.Lobby.UI.HumanoidProfileEditor;
+using Content.Client._LP.Sponsors;  //LP edit
 
 namespace Content.Client.Lobby;
 
@@ -324,7 +325,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// </summary>
     public void GiveDummyLoadout(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
     {
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _, sponsorTier: SponsorSimpleManager.GetTier());  //LP edit
     }
 
     /// <summary>
@@ -337,7 +338,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return;
 
         var gear = _prototypeManager.Index<StartingGearPrototype>(job.StartingGear);
-        gear = _stationSpawning.ApplySubGear(gear, profile, job);
+        gear = _stationSpawning.ApplySubGear(gear, profile, job, SponsorSimpleManager.GetTier());
 
         foreach (var slot in slots)
         {

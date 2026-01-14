@@ -32,6 +32,9 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField(required: true)]
     public bool RoundStart { get; private set; } = false;
 
+    [DataField]
+    public int SponsorTier = 0;
+
     // The below two are to avoid fetching information about the species from the entity
     // prototype.
 

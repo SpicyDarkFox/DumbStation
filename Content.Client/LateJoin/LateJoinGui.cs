@@ -20,6 +20,9 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+#if LP
+using Content.Client._LP.Sponsors;
+#endif
 
 namespace Content.Client.LateJoin
 {
@@ -87,6 +90,8 @@ namespace Content.Client.LateJoin
             _jobLists.Clear();
             _jobButtons.Clear();
             _jobCategories.Clear();
+
+            int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
                 Logger.GetSawmill("latejoin.ui").Warning("No stations exist, nothing to display in late-join GUI");
@@ -292,7 +297,8 @@ namespace Content.Client.LateJoin
                                 _entityManager,
                                 _prototypeManager,
                                 _configManager,
-                                out var reasons))
+                                out var reasons,
+                                0, null, sponsorTier))  //LP edit
                         {
                             jobButton.Disabled = true;
 

@@ -11,6 +11,12 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+//LP edit start
+using Content.Shared.Humanoid.Markings;
+#if LP
+using Content.Server._LP.Sponsors;
+#endif
+//LP edit end
 
 
 namespace Content.Server.Preferences.Managers
@@ -30,6 +36,13 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly UserDbDataManager _userDb = default!;
         [Dependency] private readonly IPrototypeManager _protos = default!;
 
+        //LP edit start
+        [Dependency] private readonly MarkingManager _markingManager = default!;
+#if LP
+        [Dependency] private readonly SponsorsManager _sponsors = default!;
+#endif
+        //LP edit end
+
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
@@ -47,6 +60,19 @@ namespace Content.Server.Preferences.Managers
             _sawmill = _log.GetSawmill("prefs");
         }
 
+        //LP edit start
+
+        private int GetMaxUserCharacterSlots(NetUserId userId)
+        {
+            var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
+            var extraSlots = 0;
+#if LP
+            extraSlots = _sponsors.TryGetInfo(userId, out var sponsor) ? sponsor.ExtraSlots : 0;
+#endif
+            return maxSlots + extraSlots;
+        }
+        //LP edit end
+
         private async void HandleSelectCharacterMessage(MsgSelectCharacter message)
         {
             var index = message.SelectedCharacterIndex;
@@ -58,7 +84,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (index < 0 || index >= MaxCharacterSlots)
+            if (index < 0 || index >= GetMaxUserCharacterSlots(userId)) //LP edit
             {
                 return;
             }
@@ -98,7 +124,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= MaxCharacterSlots)
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId)) //LP edit
                 return;
 
             var curPrefs = prefsData.Prefs!;
@@ -128,7 +154,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= MaxCharacterSlots)
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId)) //LP edit
             {
                 return;
             }
@@ -218,7 +244,7 @@ namespace Content.Server.Preferences.Managers
             msg.Preferences = prefsData.Prefs;
             msg.Settings = new GameSettings
             {
-                MaxCharacterSlots = MaxCharacterSlots
+                MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId) //LP edit
             };
             _netManager.ServerSendMessage(msg, session.Channel);
         }
@@ -308,8 +334,28 @@ namespace Content.Server.Preferences.Managers
         {
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
-            return new PlayerPreferences(prefs.Characters.Select(p => new KeyValuePair<int, ICharacterProfile>(p.Key,
-                    p.Value.Validated(session, collection))), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
+            return new PlayerPreferences(prefs.Characters.Select(p =>
+            // LOP edit start
+            {
+                var allowedMarkings = new List<string>();
+                int sponsorTier = 0;
+#if LP
+                if (_sponsors.TryGetInfo(session.UserId, out var sponsor))
+                {
+                    sponsorTier = sponsor.Tier;
+                    if (sponsorTier >= 3)
+                    {
+                        var marks = _markingManager.Markings.Select((a, _) => a.Value).Where(a => a.SponsorOnly == true).Select((a, _) => a.ID).ToList();
+                        marks.AddRange(sponsor.AllowedMarkings.AsEnumerable());
+                        allowedMarkings.AddRange(marks);
+                    }
+                }
+#endif
+                return new KeyValuePair<int, ICharacterProfile>(p.Key,
+                    p.Value.Validated(session, collection, allowedMarkings, sponsorTier));  //LP edit
+            }),
+            // LOP edit end
+            prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 
         public IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(

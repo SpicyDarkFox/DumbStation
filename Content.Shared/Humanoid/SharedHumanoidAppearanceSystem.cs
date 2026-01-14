@@ -75,7 +75,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         return dataNode;
     }
 
-    public HumanoidCharacterProfile FromStream(Stream stream, ICommonSession session)
+    public HumanoidCharacterProfile FromStream(Stream stream, ICommonSession session, List<string>? allowedMarkings, int sponsorTier = 0)   //LP edit
     {
         using var reader = new StreamReader(stream, EncodingHelpers.UTF8);
         var yamlStream = new YamlStream();
@@ -88,7 +88,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         var profile = export.Profile;
         var collection = IoCManager.Instance;
-        profile.EnsureValid(session, collection!);
+        profile.EnsureValid(session, collection!, allowedMarkings, sponsorTier);    //LP edit
         return profile;
     }
 

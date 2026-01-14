@@ -260,14 +260,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     }
 
     // TODO: This should eventually not be a visual change only.
-    public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null)
+    public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null, int sponsorTier = 0)  //LP edit
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
 
         var species = random.Pick(prototypeManager
             .EnumeratePrototypes<SpeciesPrototype>()
-            .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+            .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID) && x.SponsorTier <= sponsorTier) //LP edit
             .ToArray()
         ).ID;
 
@@ -461,7 +461,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && FlavorText == other.FlavorText;
     }
 
-    public void EnsureValid(ICommonSession session, IDependencyCollection collection)
+    public void EnsureValid(ICommonSession session, IDependencyCollection collection, List<string>? allowedMarkings, int sponsorTier)   //LP edit
     {
         var configManager = collection.Resolve<IConfigurationManager>();
         var prototypeManager = collection.Resolve<IPrototypeManager>();
@@ -596,7 +596,20 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             .ToList();
 
         var loadouts = LoadoutPreferences
-            .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Where(l =>
+            //LP edit start
+            {
+                if (!prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+                    return false;
+
+                var proto = prototypeManager.Index<LoadoutPrototype>(l.LoadoutName);
+
+                var isSponsor = proto.Category.AsType()
+                    .Contains("Sponsor", StringComparison.OrdinalIgnoreCase);
+
+                return !isSponsor
+                    || allowedMarkings != null && allowedMarkings.Contains(proto.ID);
+            })  //LP edit end
             .Distinct()
             .ToList();
 
@@ -628,10 +641,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _loadoutPreferences.UnionWith(loadouts);
     }
 
-    public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
+    public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, List<string>? allowedMarkings, int sponsorTier)    //LP edit
     {
         var profile = new HumanoidCharacterProfile(this);
-        profile.EnsureValid(session, collection);
+        profile.EnsureValid(session, collection, allowedMarkings, sponsorTier); //LP edit
         return profile;
     }
 
