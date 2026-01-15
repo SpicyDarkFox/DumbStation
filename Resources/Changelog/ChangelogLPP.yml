@@ -58,3 +58,10 @@ Entries:
   id: 5611
   time: '2026-01-15T11:54:57.0000000+00:00'
   url: https://github.com/Lost-Paradise-Project/Main-Station/pull/12
+- author: c2ebe0e4
+  changes:
+    - type: Add
+      message: Добавлен бан-лог для дискорда через webhook.
+  id: 5612
+  time: '2026-01-15T12:16:38.0000000+00:00'
+  url: https://github.com/Lost-Paradise-Project/Main-Station/pull/8
