@@ -142,8 +142,8 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
         int sponsorTier = 0 //LP edit
         )
     {
-        // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
+        // Disable the requirement if the role timers are disabled 
+        if (!configManager.GetCVar(CCVars.GameRoleTimers) || sponsorTier >= 5)  //LP edit
         {
             reason = null;
             return !Inverted;
@@ -218,7 +218,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
         )
     {
         // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
+        if (!configManager.GetCVar(CCVars.GameRoleTimers) || sponsorTier >= 5)  //LP edit
         {
             reason = null;
             return !Inverted;
@@ -283,7 +283,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         )
     {
         // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
+        if (!configManager.GetCVar(CCVars.GameRoleTimers) || sponsorTier >= 5)  //LP edit
         {
             reason = null;
             return !Inverted;

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._LP.Sponsors;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -124,7 +125,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidCharacterProfile? profile,
         HumanoidAppearanceComponent? humanoid = null,
         bool loadExtensions = true,
-        bool generateLoadouts = true)
+        bool generateLoadouts = true,
+        int sponsorTier = 0)    //LP edit
     {
         if (profile == null)
             return;
@@ -173,11 +175,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var facialHair = new Marking(profile.Appearance.FacialHairStyleId,
             new[] { facialHairColor });
 
-        if (_markingManager.CanBeApplied(profile.Species, profile.Sex, hair, _prototypeManager))
+        if (_markingManager.CanBeApplied(profile.Species, profile.Sex, hair, _prototypeManager, SponsorSimpleManager.GetTier()))    //LP edit
         {
             markings.AddBack(MarkingCategories.Hair, hair);
         }
-        if (_markingManager.CanBeApplied(profile.Species, profile.Sex, facialHair, _prototypeManager))
+        if (_markingManager.CanBeApplied(profile.Species, profile.Sex, facialHair, _prototypeManager, SponsorSimpleManager.GetTier()))  //LP edit
         {
             markings.AddBack(MarkingCategories.FacialHair, facialHair);
         }
@@ -185,6 +187,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // Finally adding marking with forced colors
         foreach (var (marking, prototype) in markingFColored)
         {
+            if (prototype.SponsorOnly && sponsorTier < 3)   //LP edit
+                continue;
+
             var markingColors = MarkingColoring.GetMarkingLayerColors(
                 prototype,
                 profile.Appearance.SkinColor,
@@ -194,7 +199,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             markings.AddBack(prototype.MarkingCategory, new Marking(marking.MarkingId, markingColors));
         }
 
-        markings.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _prototypeManager);
+        markings.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _prototypeManager, sponsorTier);
         markings.EnsureSexes(profile.Sex, _markingManager);
         markings.EnsureDefault(
             profile.Appearance.SkinColor,
@@ -232,7 +237,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             foreach (var marking in markingList)
             {
-                if (_markingManager.TryGetMarking(marking, out var markingPrototype))
+                if (_markingManager.TryGetMarking(marking, out var markingPrototype) && !(markingPrototype.SponsorOnly && SponsorSimpleManager.GetTier() >= 3))    //LP edit
                     ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
             }
         }
@@ -291,6 +296,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidAppearanceComponent humanoid,
         SpriteComponent sprite)
     {
+        if (markingPrototype.SponsorOnly && SponsorSimpleManager.GetTier() < 3) //LP edit
+            return;
+
         if (!sprite.LayerMapTryGet(markingPrototype.BodyPart, out int targetLayer))
             return;
 

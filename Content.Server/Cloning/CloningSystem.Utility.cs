@@ -26,6 +26,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Language.Components;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Enums;
+using Content.Server._LP.Sponsors;
 
 namespace Content.Server.Cloning;
 
@@ -326,10 +327,10 @@ public sealed partial class CloningSystem
             if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
                 pref = pref.WithFlavorText(flavorText);
 
-            _humanoidSystem.LoadProfile(mob, pref, loadExtensions: true, generateLoadouts: false);
+            _humanoidSystem.LoadProfile(mob, pref, loadExtensions: true, generateLoadouts: false, sponsorTier: SponsorSimpleManager.GetTier(mob));  //LP edit
             return;
         }
-        _humanoidSystem.LoadProfile(mob, pref, loadExtensions: true, generateLoadouts: false);
+        _humanoidSystem.LoadProfile(mob, pref, loadExtensions: true, generateLoadouts: false, sponsorTier: SponsorSimpleManager.GetTier(mob));  //LP edit
     }
 
     /// <summary>

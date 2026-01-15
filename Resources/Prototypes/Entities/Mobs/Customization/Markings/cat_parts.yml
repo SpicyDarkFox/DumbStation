@@ -2,6 +2,7 @@
   id: CatEars
   bodyPart: HeadTop
   markingCategory: HeadTop
+  sponsorOnly: true
   speciesRestriction: [Human]
   coloring:
     default:
@@ -25,6 +26,7 @@
   id: CatTail
   bodyPart: Tail
   markingCategory: Tail
+  sponsorOnly: true
   speciesRestriction: [Human]
   coloring:
     default:

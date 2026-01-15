@@ -27,6 +27,7 @@ using Content.Server.DetailExaminable;
 using Content.Shared.Store.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map.Components;
+using Content.Server._LP.Sponsors;  //LP edit
 
 namespace Content.Server.Implants;
 
@@ -214,7 +215,7 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
         {
             var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
-            _humanoidAppearance.LoadProfile(ent, newProfile, humanoid, false, false);
+            _humanoidAppearance.LoadProfile(ent, newProfile, humanoid, false, false, SponsorSimpleManager.GetTier(uid));    //LP edit
             _metaData.SetEntityName(ent, newProfile.Name, raiseEvents: false); // raising events would update ID card, station record, etc.
             if (TryComp<DnaComponent>(ent, out var dna))
             {

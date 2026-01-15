@@ -1,3 +1,4 @@
+using Content.Server._LP.Sponsors;  //LP edit
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Humanoid;
@@ -44,6 +45,7 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         _humanoid.LoadProfile(args.Entity.Value,
             profile?.WithSpecies(species.ID),
             loadExtensions: ent.Comp.AllowProfileExtensions,
-            generateLoadouts: ent.Comp.AllowAntagLoadouts);
+            generateLoadouts: ent.Comp.AllowAntagLoadouts,
+            sponsorTier: SponsorSimpleManager.GetTier(ent.Owner));    //LP edit
     }
 }

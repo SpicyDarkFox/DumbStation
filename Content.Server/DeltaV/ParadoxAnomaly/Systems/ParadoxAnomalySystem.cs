@@ -1,3 +1,4 @@
+using Content.Server._LP.Sponsors;  //LP edit
 using Content.Server.Clothing.Systems;
 using Content.Server.DeltaV.ParadoxAnomaly.Components;
 using Content.Server.DetailExaminable;
@@ -137,7 +138,9 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             spawned,
             profile,
             loadExtensions: true, //Yes it's absolutely intended that they should straight up be EXACTLY the same character
-            generateLoadouts: true); //That means loadouts too. Have fun with there potentially being a 2nd HoS Gun for traitors to want to steal.
+            generateLoadouts: true, //That means loadouts too. Have fun with there potentially being a 2nd HoS Gun for traitors to want to steal.
+            sponsorTier: SponsorSimpleManager.GetTier(uid)  //LP edit
+        );
         _metaData.SetEntityName(spawned, Name(uid));
 
         if (TryComp<DetailExaminableComponent>(uid, out var detail))

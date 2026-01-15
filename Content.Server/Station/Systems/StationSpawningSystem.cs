@@ -156,7 +156,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             if (prototype != null)
                 SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station);
 
-            _humanoidSystem.LoadProfile(entity.Value, profile, loadExtensions: false, generateLoadouts: false);
+            _humanoidSystem.LoadProfile(entity.Value, profile, null, loadExtensions: false, generateLoadouts: false, sponsorTier);  //LP edit
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
                 EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;

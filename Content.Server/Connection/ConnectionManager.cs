@@ -18,6 +18,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Server._LP.Sponsors;  //LP edit
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -267,7 +268,7 @@ namespace Content.Server.Connection
                 }
 
                 var minOverallMinutes = _cfg.GetCVar(CCVars.PanicBunkerMinOverallMinutes);
-                var overallTime = ( await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
+                var overallTime = (await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
                 var haveMinOverallTime = overallTime != null && overallTime.TimeSpent.TotalMinutes > minOverallMinutes;
 
                 // Use the custom reason if it exists & they don't have the minimum time
@@ -425,7 +426,9 @@ namespace Content.Server.Connection
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                 ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                 status == PlayerGameStatus.JoinedGame;
-            return isAdmin || wasInGame;
+
+            var isSponsor = SponsorSimpleManager.GetTier(userId) > 2;   //LP edit
+            return isAdmin || wasInGame || isSponsor;
         }
     }
 }

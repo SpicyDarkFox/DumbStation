@@ -195,7 +195,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         return new(color.RByte, color.GByte, color.BByte);
     }
 
-    public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex)
+    public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex, int sponsorTier = 0)     //LP edit
     {
         var hairStyleId = appearance.HairStyleId;
         var facialHairStyleId = appearance.FacialHairStyleId;
@@ -222,14 +222,14 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         if (proto.TryIndex(species, out SpeciesPrototype? speciesProto))
         {
             markingSet = new MarkingSet(appearance.Markings, speciesProto.MarkingPoints, markingManager, proto);
-            markingSet.EnsureValid(markingManager);
+            markingSet.EnsureValid(markingManager, sponsorTier);
 
             if (!Humanoid.SkinColor.VerifySkinColor(speciesProto.SkinColoration, skinColor))
             {
                 skinColor = Humanoid.SkinColor.ValidSkinTone(speciesProto.SkinColoration, skinColor);
             }
 
-            markingSet.EnsureSpecies(species, skinColor, markingManager);
+            markingSet.EnsureSpecies(species, skinColor, markingManager, sponsorTier: sponsorTier); //LP edit
             markingSet.EnsureSexes(sex, markingManager);
         }
 

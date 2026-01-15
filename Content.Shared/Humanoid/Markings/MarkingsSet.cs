@@ -145,7 +145,7 @@ public sealed partial class MarkingSet
     /// <param name="skinColor">The skin color for recoloring (i.e. slimes). Use null if you want only filter markings</param>
     /// <param name="markingManager">Marking manager.</param>
     /// <param name="prototypeManager">Prototype manager.</param>
-    public void EnsureSpecies(string species, Color? skinColor, MarkingManager? markingManager = null, IPrototypeManager? prototypeManager = null)
+    public void EnsureSpecies(string species, Color? skinColor, MarkingManager? markingManager = null, IPrototypeManager? prototypeManager = null, int sponsorTier = 0) //LP edit
     {
         IoCManager.Resolve(ref markingManager);
         IoCManager.Resolve(ref prototypeManager);
@@ -173,6 +173,13 @@ public sealed partial class MarkingSet
                 {
                     toRemove.Add((category, marking.MarkingId));
                 }
+
+                //LP edit start
+                if (prototype.SponsorOnly && sponsorTier < 4)
+                {
+                    toRemove.Add((category, marking.MarkingId));
+                }
+                //LP edit start
             }
         }
 
@@ -234,7 +241,7 @@ public sealed partial class MarkingSet
     ///     Ensures that all markings in this set are valid.
     /// </summary>
     /// <param name="markingManager">Marking manager.</param>
-    public void EnsureValid(MarkingManager? markingManager = null)
+    public void EnsureValid(MarkingManager? markingManager = null, int sponsorTier = 0) //LP edit
     {
         IoCManager.Resolve(ref markingManager);
 
@@ -248,6 +255,14 @@ public sealed partial class MarkingSet
                     toRemove.Add(i);
                     continue;
                 }
+
+                //LP edit start
+                if (marking.SponsorOnly && sponsorTier < 4)
+                {
+                    toRemove.Add(i);
+                    continue;
+                }
+                //LP edit end
 
                 if (marking.Sprites.Count != list[i].MarkingColors.Count)
                 {

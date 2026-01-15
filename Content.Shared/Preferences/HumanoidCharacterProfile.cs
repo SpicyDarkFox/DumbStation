@@ -547,7 +547,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText);
         }
 
-        var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
+        var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorTier);
 
         var prefsUnavailableMode = PreferenceUnavailable switch
         {
@@ -608,7 +608,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                     .Contains("Sponsor", StringComparison.OrdinalIgnoreCase);
 
                 return !isSponsor
-                    || allowedMarkings != null && allowedMarkings.Contains(proto.ID);
+                    || allowedMarkings != null && allowedMarkings.Contains(proto.ID) && proto.sponsorTier >= 3 || proto.sponsorTier >= 5;
             })  //LP edit end
             .Distinct()
             .ToList();

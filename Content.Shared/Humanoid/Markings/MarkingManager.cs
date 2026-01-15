@@ -93,7 +93,7 @@ namespace Content.Shared.Humanoid.Markings
         /// </remarks>
         /// <returns></returns>
         public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSex(MarkingCategories category,
-            Sex sex)
+            Sex sex, int sponsorTier = 0)   //LP edit
         {
             var res = new Dictionary<string, MarkingPrototype>();
 
@@ -103,6 +103,11 @@ namespace Content.Shared.Humanoid.Markings
                 {
                     continue;
                 }
+
+                //LP edit start
+                if (marking.SponsorOnly && sponsorTier < 3)
+                    continue;
+                //LP edit end
 
                 res.Add(key, marking);
             }
@@ -124,7 +129,8 @@ namespace Content.Shared.Humanoid.Markings
         public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(
             MarkingCategories category,
             string species,
-            Sex sex
+            Sex sex,
+            int sponsorTier = 0 //LP edit
             )
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
@@ -137,6 +143,9 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
 
                 if (!IsSpeciesWhitelisted(species, marking) || !IsSexWhitelisted(sex, marking))
+                    continue;
+
+                if (marking.SponsorOnly && sponsorTier < 3) //LP edit
                     continue;
 
                 res.Add(key, marking);
@@ -178,7 +187,7 @@ namespace Content.Shared.Humanoid.Markings
                 CachePrototypes();
         }
 
-        public bool CanBeApplied(string species, Sex sex, Marking marking, IPrototypeManager? prototypeManager = null)
+        public bool CanBeApplied(string species, Sex sex, Marking marking, IPrototypeManager? prototypeManager = null, int sponsorTier = 0) //LP edit
         {
             IoCManager.Resolve(ref prototypeManager);
 
@@ -186,6 +195,9 @@ namespace Content.Shared.Humanoid.Markings
             var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
 
             if (!TryGetMarking(marking, out var prototype))
+                return false;
+
+            if (prototype.SponsorOnly && sponsorTier < 3)   //LP edit
                 return false;
 
             if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
@@ -197,8 +209,11 @@ namespace Content.Shared.Humanoid.Markings
             return true;
         }
 
-        public bool CanBeApplied(string species, Sex sex, MarkingPrototype prototype, IPrototypeManager? prototypeManager = null)
+        public bool CanBeApplied(string species, Sex sex, MarkingPrototype prototype, IPrototypeManager? prototypeManager = null, int sponsorTier = 0) //LP edit
         {
+            if (prototype.SponsorOnly && sponsorTier < 3)   //LP edit
+                return false;
+
             IoCManager.Resolve(ref prototypeManager);
 
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);

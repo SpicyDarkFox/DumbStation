@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._LP.Sponsors;
 using Content.Client.Stylesheets;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -174,9 +175,10 @@ public sealed partial class MarkingPicker : Control
 
     private IReadOnlyDictionary<string, MarkingPrototype> GetMarkings(MarkingCategories category)
     {
+        var sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
         return IgnoreSpecies
-            ? _markingManager.MarkingsByCategoryAndSex(category, _currentSex)
-            : _markingManager.MarkingsByCategoryAndSpeciesAndSex(category, _currentSpecies, _currentSex);
+            ? _markingManager.MarkingsByCategoryAndSex(category, _currentSex, sponsorTier)   //LP edit
+            : _markingManager.MarkingsByCategoryAndSpeciesAndSex(category, _currentSpecies, _currentSex, sponsorTier);   //LP edit
     }
 
     public void Populate(string filter)

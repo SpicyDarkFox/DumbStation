@@ -128,7 +128,23 @@ namespace Content.Server.Preferences.Managers
             var curPrefs = prefsData.Prefs!;
             var session = _playerManager.GetSessionById(userId);
 
-            profile.EnsureValid(session, _dependencies);
+            //LP edit start
+            var sponsorTier = SponsorSimpleManager.GetTier(userId);
+            var allowedMarkings = new List<string>();
+#if LP
+            if (IoCManager.Resolve<SponsorsManager>().TryGetInfo(userId, out var sponsorInfo))
+            {
+                sponsorTier = sponsorInfo.Tier;
+                if (sponsorTier >= 3)
+                {
+                    var sponsormarks = _markingManager.Markings.Select((a, _) => a.Value).Where(a => a.SponsorOnly == true).Select((a, _) => a.ID).ToList();
+                    sponsormarks.AddRange(sponsorInfo.AllowedMarkings.AsEnumerable());
+                    allowedMarkings.AddRange(sponsormarks);
+                }
+            }
+#endif
+            //LP edit end
+            profile.EnsureValid(session, _dependencies, allowedMarkings, sponsorTier);  //LP edit
 
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {

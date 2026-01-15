@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Content.Client._LP.Sponsors;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
@@ -64,8 +66,24 @@ namespace Content.Client.Lobby
 
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
+            //LP edit end
+            List<string> marks = new();
+            var sponsorTier = SponsorSimpleManager.GetTier();
+#if LP
+            if (IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsorInfo))
+            {
+                sponsorTier = sponsorInfo.Tier;
+                if (sponsorTier >= 3)
+                {
+                    var sponsormarks = IoCManager.Resolve<MarkingManager>().Markings.Select((a, _) => a.Value).Where(a => a.SponsorOnly == true).Select((a, _) => a.ID).ToList();
+                    sponsormarks.AddRange(sponsorInfo.AllowedMarkings.AsEnumerable());
+                    marks.AddRange(sponsormarks);
+                }
+            }
+#endif
+            //LP edit end
             var collection = IoCManager.Instance!;
-            profile.EnsureValid(_playerManager.LocalSession!, collection);
+            profile.EnsureValid(_playerManager.LocalSession!, collection, marks, sponsorTier);  //LP edit
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
             var msg = new MsgUpdateCharacter

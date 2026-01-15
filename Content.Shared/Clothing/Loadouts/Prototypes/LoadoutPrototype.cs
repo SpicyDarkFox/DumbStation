@@ -53,6 +53,13 @@ public sealed partial class LoadoutPrototype : IPrototype
     [DataField]
     public string GuideEntry { get; } = "";
 
+    //LP edit start
+    [DataField]
+    public int sponsorTier = 0;
+
+    [DataField]
+    public string UUID = "";
+
     [DataField(serverOnly: true)]
     public LoadoutFunction[] Functions { get; private set; } = Array.Empty<LoadoutFunction>();
 }

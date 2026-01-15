@@ -21,6 +21,7 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 using Content.Shared._EE.GenderChange;
+using Content.Shared._LP.Sponsors;
 
 namespace Content.Shared.Humanoid;
 
@@ -100,7 +101,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (string.IsNullOrEmpty(humanoid.Initial)
             || !_proto.TryIndex(humanoid.Initial, out HumanoidProfilePrototype? startingSet))
         {
-            LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid, false, false);
+            LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid, false, false, sponsorTier: 0);    //LP WARNING!!! если не работает что-то, то заменить на 9
             return;
         }
 
@@ -108,7 +109,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         foreach (var (layer, info) in startingSet.CustomBaseLayers)
             humanoid.CustomBaseLayers.Add(layer, info);
 
-        LoadProfile(uid, startingSet.Profile, humanoid, false, false);
+        LoadProfile(uid, startingSet.Profile, humanoid, false, false, sponsorTier: 0);    //LP WARNING!!! если не работает что-то, то заменить на 9
     }
 
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
@@ -205,13 +206,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="species">The species to set the mob to. Will return if the species prototype was invalid.</param>
     /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
     /// <param name="humanoid">Humanoid component of the entity</param>
-    public void SetSpecies(EntityUid uid, string species, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    public void SetSpecies(EntityUid uid, string species, bool sync = true, HumanoidAppearanceComponent? humanoid = null, int sponsorTier = 0)  //LP edit
     {
         if (!Resolve(uid, ref humanoid) || !_proto.TryIndex<SpeciesPrototype>(species, out var prototype))
             return;
 
         humanoid.Species = species;
-        humanoid.MarkingSet.EnsureSpecies(species, humanoid.SkinColor, _markingManager);
+        humanoid.MarkingSet.EnsureSpecies(species, humanoid.SkinColor, _markingManager, null, sponsorTier); //LP edit
         var oldMarkings = humanoid.MarkingSet.GetForwardEnumerator().ToList();
         humanoid.MarkingSet = new(oldMarkings, prototype.MarkingPoints, _markingManager, _proto);
 
@@ -379,7 +380,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         HumanoidCharacterProfile? profile,
         HumanoidAppearanceComponent? humanoid = null,
         bool loadExtensions = true,
-        bool generateLoadouts = true)
+        bool generateLoadouts = true,
+        int sponsorTier = 0 //LP edit
+        )
     {
         if (profile == null)
             return;
@@ -387,7 +390,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid))
             return;
 
-        SetSpecies(uid, profile.Species, false, humanoid);
+        SetSpecies(uid, profile.Species, false, humanoid, sponsorTier);     //LP edit
         SetSex(uid, profile.Sex, false, humanoid);
 
         humanoid.Gender = profile.Gender;
@@ -410,7 +413,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (loadExtensions && _sharedPlayerManager.TryGetSessionByEntity(uid, out var session))
             RaiseLocalEvent(uid, new LoadProfileExtensionsEvent(uid, session, null, profile, generateLoadouts));
 
-        SetMarkings(uid, profile, humanoid);
+        SetMarkings(uid, profile, humanoid, sponsorTier);
 
         var species = _proto.Index(humanoid.Species);
 
@@ -426,7 +429,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         RaiseLocalEvent(uid, new ProfileLoadFinishedEvent());
     }
 
-    public void SetMarkings(EntityUid uid, HumanoidCharacterProfile profile, HumanoidAppearanceComponent humanoid)
+    public void SetMarkings(EntityUid uid, HumanoidCharacterProfile profile, HumanoidAppearanceComponent humanoid, int sponsorTier = 0) //LP edit
     {
         humanoid.MarkingSet.Clear();
         // Add markings that doesn't need coloring. We store them until we add all other markings that doesn't need it.
@@ -457,7 +460,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             _markingManager.CanBeApplied(profile.Species, profile.Sex, facialHairPrototype, _proto))
             AddMarking(uid, profile.Appearance.FacialHairStyleId, facialHairColor, false);
 
-        humanoid.MarkingSet.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _proto);
+        humanoid.MarkingSet.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _proto, sponsorTier);    //LP edit
 
         // Finally adding marking with forced colors
         foreach (var (marking, prototype) in markingFColored)
