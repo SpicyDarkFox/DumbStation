@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -82,6 +82,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> ServerBanUseLastDetails =
         CVarDef.Create("admin.server_ban_use_last_details", true, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     If true, will reset the last time the player has read the rules. This will mean on their next login they will be shown the rules again.
+    /// </summary>
+    public static readonly CVarDef<bool> ServerBanResetLastReadRules =
+        CVarDef.Create("admin.server_ban_reset_last_read_rules", true, CVar.ARCHIVE | CVar.SERVER);
 
     /// <summary>
     ///     Whether to erase a player's chat messages and their entity from the game when banned.
