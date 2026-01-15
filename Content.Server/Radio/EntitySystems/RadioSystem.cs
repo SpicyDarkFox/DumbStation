@@ -19,6 +19,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+// LP edit start
+using Content.Shared.Inventory;
+using Content.Shared.PDA;
+using Content.Shared.Access.Components;
+// LP edit end
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -34,11 +39,14 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!; // LP edit
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
 
     private EntityQuery<TelecomExemptComponent> _exemptQuery;
+
+    private const string NoIdIconPath = "/Textures/Interface/Misc/job_icons.rsi/NoId.png"; // LP edit
 
     public override void Initialize()
     {
@@ -127,12 +135,22 @@ public sealed class RadioSystem : EntitySystem
         var name = evt.VoiceName;
         name = FormattedMessage.EscapeText(name);
 
+        // LP edit START
+        var tag = Loc.GetString(
+            "radio-icon-tag",
+            ("path", GetIdCardSprite(messageSource)),
+            ("scale", "2")
+        );
+
+        var formattedName = $"{tag} {name}";
+        // LP edit END
+
         // most radios are relayed to chat, so lets parse the chat message beforehand
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
 
-        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, evt, language, frequency);
+        var wrappedMessage = WrapRadioMessage(messageSource, channel, formattedName, content, evt, language, frequency);
         var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null);
 
         // ... you guess it
@@ -239,6 +257,48 @@ public sealed class RadioSystem : EntitySystem
             ("message", message),
             ("language", languageDisplay));
     }
+
+    // LP edit START
+
+    private string GetIdCardSprite(EntityUid senderUid)
+    {
+
+        var protoId = GetIdCard(senderUid)?.JobIcon;
+        var sprite = NoIdIconPath;
+
+        if (_prototype.TryIndex(protoId, out var prototype))
+        {
+            switch (prototype.Icon)
+            {
+                case SpriteSpecifier.Texture tex:
+                    sprite = tex.TexturePath.CanonPath;
+                    break;
+                case SpriteSpecifier.Rsi rsi:
+                    sprite = rsi.RsiPath.CanonPath + "/" + rsi.RsiState + ".png";
+                    break;
+            }
+        }
+
+        return sprite;
+    }
+    private IdCardComponent? GetIdCard(EntityUid senderUid)
+    {
+        if (!_inventorySystem.TryGetSlotEntity(senderUid, "id", out var idUid))
+            return null;
+
+        if (EntityManager.TryGetComponent(idUid, out PdaComponent? pda) && pda.ContainedId is not null)
+        {
+            if (TryComp<IdCardComponent>(pda.ContainedId, out var idComp))
+                return idComp;
+        }
+        else if (EntityManager.TryGetComponent(idUid, out IdCardComponent? id))
+        {
+            return id;
+        }
+
+        return null;
+    }
+    // LP edit END
 
     /// <inheritdoc cref="TelecomServerComponent"/>
     private bool HasActiveServer(MapId mapId, string channelId)

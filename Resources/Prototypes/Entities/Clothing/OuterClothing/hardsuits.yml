@@ -686,6 +686,7 @@
         shader: unshaded
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitShanlinUnpainted
+  - type: DNALocker # ADT edit
 
 - type: entity
   parent: [ClothingOuterHardsuitBaseMedium, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
@@ -732,6 +733,7 @@
     - HidesHarpyWings
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: DNALocker # ADT edit
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -758,6 +760,7 @@
     - HidesHarpyWings
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: DNALocker # ADT edit
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -777,6 +780,7 @@
         shader: unshaded
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitShiweiUnpainted
+  - type: DNALocker # ADT edit
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
@@ -822,6 +826,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: DNALocker # ADT edit
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -863,6 +868,7 @@
     coefficient: 0.5 # 50%
   - type: Item
     size: Huge
+  - type: DNALocker # ADT edit
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -916,6 +922,7 @@
     modifier: 0.5
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.2
+  - type: DNALocker # ADT edit
 
 #Wizard Hardsuit
 - type: entity
@@ -1064,6 +1071,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #ERT Chaplain Hardsuit
 - type: entity
@@ -1080,6 +1091,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTChaplain
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #ERT Engineer Hardsuit
 - type: entity
@@ -1101,6 +1116,10 @@
     coolingCoefficient: 0.001
   - type: FireProtection
     reduction: 1
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #ERT Medic Hardsuit
 - type: entity
@@ -1117,6 +1136,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #ERT Security Hardsuit
 - type: entity
@@ -1137,6 +1160,10 @@
     - WhitelistChameleon
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #ERT Janitor Hardsuit
 - type: entity
@@ -1153,6 +1180,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTJanitor
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #Deathsquad
 - type: entity
@@ -1192,6 +1223,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
   - type: StaminaDamageResistance
     coefficient: 0.1 # 90%
+  - type: DNALocker # ADT edit
 
 #CBURN Hardsuit
 - type: entity
@@ -1229,6 +1261,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 #MISC. HARDSUITS
 #Clown Hardsuit
