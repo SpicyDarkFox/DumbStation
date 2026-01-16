@@ -106,13 +106,15 @@ public sealed partial class TraitPreferenceSelector : Control
         void MakeTooltipTree(BoxContainer box, List<CharacterRequirement> requirements)
         {
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
+
             foreach (var requirement in requirements)
             {
                 if (requirement is CharacterLogicRequirement logicRequirement)
                 {
                     requirement.IsValid(
                         highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), trait,
-                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier);  //LP edit
+                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier, uuid);  //LP edit
                     box.AddChild(new RichTextLabel { Text = reason?.Split("\n")[0], Margin = new(8, 2), });
                     var newBox = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, };
                     box.AddChild(new PanelContainer
@@ -132,7 +134,7 @@ public sealed partial class TraitPreferenceSelector : Control
                 {
                     requirement.IsValid(
                         highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), trait,
-                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier);  //LP edit
+                        entityManager, prototypeManager, configManager, out var reason, 0, null, sponsorTier, uuid);  //LP edit
                     box.AddChild(new RichTextLabel
                     {
                         Text = reason,

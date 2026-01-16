@@ -74,6 +74,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
         Dictionary<int, ThiefBackpackSetInfo> data = new();
 
         int sponsorTier = SponsorSimpleManager.GetTier(user); //LP edit
+        var uuid = SponsorSimpleManager.GetUUID(uid);         //LP edit
 
         for (int i = 0; i < component.PossibleSets.Count; i++)
         {
@@ -84,7 +85,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
                 appearance.LastProfileLoaded != null &&
                 !_characterRequirements.CheckRequirementsValid(
                     set.Requirements, new JobPrototype() /* not gonna bother with jobs */,
-                    appearance.LastProfileLoaded, new Dictionary<string, TimeSpan>(), false, set, EntityManager, _proto, _config, out _, 0, null, sponsorTier)) //LP edit
+                    appearance.LastProfileLoaded, new Dictionary<string, TimeSpan>(), false, set, EntityManager, _proto, _config, out _, 0, null, sponsorTier, uuid)) //LP edit
                 continue;
 
             var selected = component.SelectedSets.Contains(i);

@@ -89,6 +89,7 @@ public sealed class TraitSystem : EntitySystem
         }
 
         int sponsorTier = SponsorSimpleManager.GetTier(uid); //LP edit
+        var uuid = SponsorSimpleManager.GetUUID(uid);      //LP edit
         sortedTraits.Sort();
         var traitsToAdd = new List<TraitPrototype>();
         foreach (var traitPrototype in sortedTraits)
@@ -98,7 +99,7 @@ public sealed class TraitSystem : EntitySystem
                 jobPrototypeToUse,
                 profile, playTimes, whitelisted, traitPrototype,
                 EntityManager, _prototype, _configuration,
-                out _, 0, null, sponsorTier))   //LP edit
+                out _, 0, null, sponsorTier, uuid))   //LP edit
                 continue;
 
             // To check for cheaters. :FaridaBirb.png:

@@ -65,7 +65,7 @@ public sealed class EmployerSystem : EntitySystem
             jobPrototypeToUse,
             profile, playTimes, whitelisted, employerPrototype,
             EntityManager, _prototype, _configuration,
-            out _, 0, null, SponsorSimpleManager.GetTier(uid)))  //LP edit
+            out _, 0, null, SponsorSimpleManager.GetTier(uid), SponsorSimpleManager.GetUUID(uid)))  //LP edit
             return;
 
         AddEmployer(uid, employerPrototype);

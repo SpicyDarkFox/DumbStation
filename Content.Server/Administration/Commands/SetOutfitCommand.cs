@@ -87,7 +87,7 @@ namespace Content.Server.Administration.Commands
             }
 
             var stationSpawning = entityManager.System<SharedStationSpawningSystem>();
-            stationSpawning.EquipStartingGear(target, startingGear, sponsorTier: SponsorSimpleManager.GetTier(target)); //LP edit
+            stationSpawning.EquipStartingGear(target, startingGear, sponsorTier: SponsorSimpleManager.GetTier(target), uuid: SponsorSimpleManager.GetUUID(target)); //LP edit
 
             if (entityManager.HasComponent<CluwneComponent>(target)
                 || !entityManager.HasComponent<EncryptionKeyHolderComponent>(target))

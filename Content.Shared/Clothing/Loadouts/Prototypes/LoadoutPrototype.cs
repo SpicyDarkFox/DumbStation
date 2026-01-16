@@ -54,10 +54,10 @@ public sealed partial class LoadoutPrototype : IPrototype
     public string GuideEntry { get; } = "";
 
     //LP edit start
-    [DataField]
+    [DataField("sponsorTier")]
     public int sponsorTier = 0;
 
-    [DataField]
+    [DataField("UUID")]
     public string UUID = "";
 
     [DataField(serverOnly: true)]

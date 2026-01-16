@@ -1,23 +1,25 @@
 using System.Linq;
-using Content.Shared.Implants.Components;
 using Content.Shared.Mind;
-using Content.Shared.Mindshield.Components;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Content.Shared.Customization.Systems;
 
-namespace Content.Shared.Customization.Systems;
+namespace Content.Shared._LP.Customization;
 
 /// <summary>
-///     Requires the player to have a mindshield
+///     Требование на соответствие UUID игрока
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterMindshieldRequirement : CharacterRequirement
+public sealed partial class UUIDRequirement : CharacterRequirement
 {
+    [DataField("userUID", required: true)]
+    public string UserUID;
+
     public override bool IsValid(JobPrototype job,
         HumanoidCharacterProfile profile,
         IReadOnlyDictionary<string, TimeSpan> playTimes,
@@ -33,11 +35,11 @@ public sealed partial class CharacterMindshieldRequirement : CharacterRequiremen
         string uuid = ""     //LP edit
         )
     {
-        reason = Loc.GetString("character-mindshield-requirement", ("inverted", Inverted));
+        reason = Loc.GetString("player-uuid-requirement", ("inverted", Inverted));
 
-        if (mind == null)
-            return false;
+        if (uuid == UserUID)
+            return !Inverted;
 
-        return entityManager.HasComponent<MindShieldComponent>(mind.CurrentEntity) != Inverted;
+        return Inverted;
     }
 }

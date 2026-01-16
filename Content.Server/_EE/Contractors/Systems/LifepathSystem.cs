@@ -65,7 +65,7 @@ public sealed class LifepathSystem : EntitySystem
             jobPrototypeToUse,
             profile, playTimes, whitelisted, lifepathPrototype,
             EntityManager, _prototype, _configuration,
-            out _, 0, null, SponsorSimpleManager.GetTier(uid)))   //LP edit
+            out _, 0, null, SponsorSimpleManager.GetTier(uid), SponsorSimpleManager.GetUUID(uid)))   //LP edit
             return;
 
         AddLifepath(uid, lifepathPrototype);

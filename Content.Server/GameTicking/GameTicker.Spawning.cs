@@ -252,7 +252,7 @@ namespace Content.Server.GameTicking
 
             _playTimeTrackings.PlayerRolesChanged(player);
 
-            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, jobId, character, sponsorTier: SponsorSimpleManager.GetTier(player.UserId)); //LP edit
+            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, jobId, character, sponsorTier: SponsorSimpleManager.GetTier(player.UserId), uuid: player.UserId.ToString()); //LP edit
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
 

@@ -154,7 +154,7 @@ namespace Content.Server.Administration.Systems
                             var stationUid = _stations.GetOwningStation(args.Target);
 
                             var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
-                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid, sponsorTier: SponsorSimpleManager.GetTier(player.UserId));   //LP edit
+                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid, sponsorTier: SponsorSimpleManager.GetTier(player.UserId), uuid: player.UserId.ToString());   //LP edit
                             var targetMind = _mindSystem.GetMind(args.Target);
 
                             if (targetMind != null)
@@ -182,7 +182,7 @@ namespace Content.Server.Administration.Systems
                             var stationUid = _stations.GetOwningStation(args.Target);
 
                             var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
-                            _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid, sponsorTier: SponsorSimpleManager.GetTier(player.UserId));    //LP edit
+                            _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid, sponsorTier: SponsorSimpleManager.GetTier(player.UserId), uuid: player.UserId.ToString());    //LP edit
                         },
                         ConfirmationPopup = true,
                         Impact = LogImpact.High,

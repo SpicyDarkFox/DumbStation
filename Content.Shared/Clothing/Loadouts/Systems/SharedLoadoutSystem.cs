@@ -48,7 +48,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             return;
 
         var proto = _prototype.Index(_random.Pick(component.StartingGear));
-        _station.EquipStartingGear(uid, proto, sponsorTier: 0);     //LP ATTENTION!!! ищите аналогичные метки при проблемах с лодаутами спонсоров. заменить на 9
+        _station.EquipStartingGear(uid, proto, sponsorTier: 0);     //LP ATTENTION!!! ищите аналогичные метки при проблемах с лодаутами спонсоров. заменить на 9 (аналогично с uuid)
     }
 
     public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(
@@ -81,7 +81,9 @@ public sealed class SharedLoadoutSystem : EntitySystem
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         out List<(EntityUid, LoadoutPreference)> heirlooms,
-        int sponsorTier = 0)    //LP edit
+        int sponsorTier = 0,    //LP edit
+        string uuid = ""        //LP edit
+    )
     {
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
@@ -100,7 +102,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             if (!_characterRequirements.CheckRequirementsValid(
                 loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
                 EntityManager, _prototype, _configuration,
-                out _, 0, null, sponsorTier))   //LP edit
+                out _, 0, null, sponsorTier, uuid))   //LP edit
                 continue;
 
             // Spawn the loadout items

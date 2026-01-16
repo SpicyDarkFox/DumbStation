@@ -90,6 +90,7 @@ namespace Content.Client.LateJoin
             _jobCategories.Clear();
 
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
                 Logger.GetSawmill("latejoin.ui").Warning("No stations exist, nothing to display in late-join GUI");
@@ -296,7 +297,7 @@ namespace Content.Client.LateJoin
                                 _prototypeManager,
                                 _configManager,
                                 out var reasons,
-                                0, null, sponsorTier))  //LP edit
+                                0, null, sponsorTier, uuid))  //LP edit
                         {
                             jobButton.Disabled = true;
 

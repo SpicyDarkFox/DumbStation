@@ -35,7 +35,8 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         var jobs = new List<string>();
@@ -89,7 +90,8 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         var departments = new List<string>();
@@ -139,7 +141,8 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         // Disable the requirement if the role timers are disabled 
@@ -214,7 +217,8 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         // Disable the requirement if the role timers are disabled
@@ -279,7 +283,8 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         // Disable the requirement if the role timers are disabled

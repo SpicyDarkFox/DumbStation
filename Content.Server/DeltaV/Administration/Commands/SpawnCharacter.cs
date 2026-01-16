@@ -84,7 +84,7 @@ public sealed class SpawnCharacter : IConsoleCommand
 
 
         mindSystem.TransferTo(mindId, _entityManager.System<StationSpawningSystem>()
-            .SpawnPlayerMob(coordinates, profile: character, entity: null, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId)));    //LP edit
+            .SpawnPlayerMob(coordinates, profile: character, entity: null, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId), uuid: player.UserId.ToString()));    //LP edit
 
         shell.WriteLine(Loc.GetString("spawncharacter-command-complete"));
     }

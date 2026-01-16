@@ -17,7 +17,7 @@ namespace Content.Server.Ghost.Roles
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-        private void OnSpawnerTakeCharacter( EntityUid uid, GhostRoleCharacterSpawnerComponent component,
+        private void OnSpawnerTakeCharacter(EntityUid uid, GhostRoleCharacterSpawnerComponent component,
             ref TakeGhostRoleEvent args)
         {
             if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
@@ -30,7 +30,7 @@ namespace Content.Server.Ghost.Roles
             var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Player.UserId).SelectedCharacter;
 
             var mob = _entityManager.System<StationSpawningSystem>()
-                .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null, null, SponsorSimpleManager.GetTier(uid));    //LP edit
+                .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null, null, SponsorSimpleManager.GetTier(uid), SponsorSimpleManager.GetUUID(uid));    //LP edit
             _transform.AttachToGridOrMap(mob);
 
             string? outfit = null;

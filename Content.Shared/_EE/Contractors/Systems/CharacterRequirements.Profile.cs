@@ -40,7 +40,8 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0     //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
     )
     {
         if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
@@ -82,7 +83,8 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0     //LP edit
+        int sponsorTier = 0,     //LP edit
+        string uuid = ""         //LP edit
     )
     {
         if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
@@ -124,7 +126,8 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0     //LP edit
+        int sponsorTier = 0,     //LP edit
+        string uuid = ""         //LP edit
     )
     {
         if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||

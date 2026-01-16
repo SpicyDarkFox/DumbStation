@@ -337,7 +337,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
 
         EntityManager.AddComponents(player, def.Components);
-        _stationSpawning.EquipStartingGear(player, def.StartingGear, sponsorTier: session != null ? SponsorSimpleManager.GetTier(session.UserId) : 0);    //LP edit
+        //LP edit start
+        var sponsorTier = session != null ? SponsorSimpleManager.GetTier(session.UserId) : 0;
+        var uuid = session != null ? session.UserId.ToString() : "";
+        //LP edit end
+        _stationSpawning.EquipStartingGear(player, def.StartingGear, true, sponsorTier, uuid);    //LP edit
 
         if (session != null)
         {

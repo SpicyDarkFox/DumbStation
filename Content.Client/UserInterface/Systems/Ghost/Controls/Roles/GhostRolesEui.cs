@@ -106,7 +106,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var groupedRoles = ghostState.GhostRoles.GroupBy(
                 role => (role.Name, role.Description, role.Requirements));
 
-            int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
 
             // Add a new entry for each role group
             foreach (var group in groupedRoles)
@@ -126,7 +127,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                     entityManager,
                     protoMan,
                     configManager,
-                    out var reasons, 0, null, sponsorTier)) //LP edit
+                    out var reasons, 0, null, sponsorTier, uuid)) //LP edit
                     hasAccess = false;
 
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);

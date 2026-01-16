@@ -87,6 +87,6 @@ public sealed class SpawnPointSystem : EntitySystem
             args.Job,
             args.HumanoidCharacterProfile,
             args.Station,
-            null, args.sponsorTier);   //LP edit
+            null, args.sponsorTier, args.uuid);   //LP edit
     }
 }

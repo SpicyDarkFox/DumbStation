@@ -221,7 +221,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             EntityManager,
             _prototypes,
             _cfg,
-            out _, 0, null, sponsorTier);   //LP edit
+            out _, 0, null, sponsorTier, player.UserId.ToString());   //LP edit
     }
 
     public HashSet<ProtoId<JobPrototype>> GetDisallowedJobs(ICommonSession player)
@@ -253,7 +253,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 EntityManager,
                 _prototypes,
                 _cfg,
-                out _, 0, null, sponsorTier))   //LP edit
+                out _, 0, null, sponsorTier, player.UserId.ToString()))   //LP edit
                 continue;
 
             roles.Add(job.ID);
@@ -298,7 +298,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 EntityManager,
                 _prototypes,
                 _cfg,
-                out _, 0, null, sponsorTier))   //LP edit
+                out _, 0, null, sponsorTier, userId.ToString()))   //LP edit
                 continue;
 
             jobs.RemoveSwap(i);

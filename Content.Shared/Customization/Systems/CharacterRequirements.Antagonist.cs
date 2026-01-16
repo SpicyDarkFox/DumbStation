@@ -30,7 +30,8 @@ public sealed partial class CharacterAntagonistRequirement : CharacterRequiremen
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         // Considering this will not be used in the character creation menu, players will likely never see this text.

@@ -30,7 +30,8 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         out string? reason,
         int depth = 0,
         MindComponent? mind = null,
-        int sponsorTier = 0 //LP edit
+        int sponsorTier = 0, //LP edit
+        string uuid = ""     //LP edit
         )
     {
         reason = null;

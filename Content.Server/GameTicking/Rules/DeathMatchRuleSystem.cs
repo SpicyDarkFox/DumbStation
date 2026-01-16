@@ -51,7 +51,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem<DeathMatchRuleComponen
             var newMind = _mind.CreateMind(ev.Player.UserId, ev.Profile.Name);
             _mind.SetUserId(newMind, ev.Player.UserId);
 
-            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile, sponsorTier: SponsorSimpleManager.GetTier(ev.Player.UserId));    //LP edit
+            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile, sponsorTier: SponsorSimpleManager.GetTier(ev.Player.UserId), uuid: ev.Player.UserId.ToString());    //LP edit
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
 

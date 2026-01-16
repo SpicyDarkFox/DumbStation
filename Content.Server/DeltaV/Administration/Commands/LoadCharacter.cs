@@ -124,7 +124,7 @@ public sealed class LoadCharacter : IConsoleCommand
             : EntitySystem.Get<GameTicker>().GetObserverSpawnPoint();
 
         EntitySystem.Get<StationSpawningSystem>()
-            .SpawnPlayerMob(coordinates, profile: character, entity: target, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId));   //LP edit
+            .SpawnPlayerMob(coordinates, profile: character, entity: target, job: null, station: null, sponsorTier: SponsorSimpleManager.GetTier(player.UserId), uuid: player.UserId.ToString());   //LP edit
 
         shell.WriteLine(Loc.GetString("loadcharacter-command-complete"));
     }

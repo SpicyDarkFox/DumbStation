@@ -338,7 +338,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return;
 
         var gear = _prototypeManager.Index<StartingGearPrototype>(job.StartingGear);
-        gear = _stationSpawning.ApplySubGear(gear, profile, job, SponsorSimpleManager.GetTier());   //LP edit
+        gear = _stationSpawning.ApplySubGear(gear, profile, job, SponsorSimpleManager.GetTier(), SponsorSimpleManager.GetUUID());   //LP edit
 
         foreach (var slot in slots)
         {

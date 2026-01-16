@@ -650,14 +650,19 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public void RefreshSpecies()
         {
+            var sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+
             SpeciesButton.Clear();
             _species.Clear();
 
-            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && o.SponsorTier <= SponsorSimpleManager.GetTier()));  //LOP edit
+            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && o.SponsorTier <= sponsorTier));  //LOP edit
             var speciesIds = _species.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _species.Count; i++)
             {
+                if (sponsorTier < _species[i].SponsorTier)  //LP edit
+                    continue;
+
                 SpeciesButton.AddItem(Loc.GetString(_species[i].Name), i);
 
                 if (Profile?.Species.Equals(_species[i].ID) == true)
@@ -684,7 +689,7 @@ namespace Content.Client.Lobby.UI
                     o,
                     _entManager,
                     _prototypeManager,
-                    _cfgManager, out _, 0, null, sponsorTier)));    //LP edit
+                    _cfgManager, out _, 0, null, sponsorTier, SponsorSimpleManager.GetUUID())));    //LP edit
 
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
@@ -719,7 +724,7 @@ namespace Content.Client.Lobby.UI
                 o,
                 _entManager,
                 _prototypeManager,
-                _cfgManager, out _, 0, null, sponsorTier)));   //LP edit
+                _cfgManager, out _, 0, null, sponsorTier, SponsorSimpleManager.GetUUID())));   //LP edit
 
             var employerIds = _employers.Select(o => o.ID).ToList();
 
@@ -754,7 +759,7 @@ namespace Content.Client.Lobby.UI
                 o,
                 _entManager,
                 _prototypeManager,
-                _cfgManager, out _, 0, null, sponsorTier)));    //LP edit
+                _cfgManager, out _, 0, null, sponsorTier, SponsorSimpleManager.GetUUID())));    //LP edit
 
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
@@ -795,6 +800,7 @@ namespace Content.Client.Lobby.UI
         public void RefreshAntags()
         {
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
             AntagList.DisposeAllChildren();
             var items = new[]
             {
@@ -838,7 +844,7 @@ namespace Content.Client.Lobby.UI
                     _entManager,
                     _prototypeManager,
                     _cfgManager,
-                    out var reasons, 0, null, sponsorTier)) // LP edit
+                    out var reasons, 0, null, sponsorTier, uuid)) // LP edit
                 {
                     var reason = _characterRequirementsSystem.GetRequirementsText(reasons);
                     selector.LockRequirements(reason);
@@ -1025,6 +1031,7 @@ namespace Content.Client.Lobby.UI
         public void RefreshJobs()
         {
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
             JobList.DisposeAllChildren();
             _jobCategories.Clear();
             _jobPriorities.Clear();
@@ -1113,7 +1120,7 @@ namespace Content.Client.Lobby.UI
                         _entManager,
                         _prototypeManager,
                         _cfgManager,
-                        out var reasons, 0, null, sponsorTier)) //LP edit
+                        out var reasons, 0, null, sponsorTier, uuid)) //LP edit
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
                     else
                         selector.UnlockRequirements();
@@ -2007,6 +2014,7 @@ namespace Content.Client.Lobby.UI
         public void UpdateTraits(bool? showUnusable = null, bool reload = false)
         {
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
 
             showUnusable ??= TraitsShowUnusableButton.Pressed;
 
@@ -2042,7 +2050,7 @@ namespace Content.Client.Lobby.UI
                     _prototypeManager,
                     _cfgManager,
                     out _,
-                    0, null, sponsorTier    //LP edit
+                    0, null, sponsorTier, uuid    //LP edit
                 );
                 _traits.Add(trait, usable);
 
@@ -2344,6 +2352,7 @@ namespace Content.Client.Lobby.UI
         public void UpdateLoadouts(bool? showUnusable = null, bool reload = false)
         {
             int sponsorTier = SponsorSimpleManager.GetTier();   //LP edit
+            var uuid = SponsorSimpleManager.GetUUID();          //LP edit
             showUnusable ??= LoadoutsShowUnusableButton.Pressed;
 
             // Reset loadout points so you don't get -14 points or something for no reason
@@ -2380,7 +2389,7 @@ namespace Content.Client.Lobby.UI
                     _prototypeManager,
                     _cfgManager,
                     out _,
-                    0, null, sponsorTier    //LP edit
+                    0, null, sponsorTier, uuid    //LP edit
                 );
                 _loadouts.Add(loadout, usable);
 
