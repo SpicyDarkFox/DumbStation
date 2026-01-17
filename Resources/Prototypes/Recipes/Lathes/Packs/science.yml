@@ -43,7 +43,7 @@
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
   # EE EDIT START
-  - ClothingShoesBootsMagAdv
+  # - ClothingShoesBootsMagAdv // LP Edit -> NO FREE HIGH RISK!!!
   - ClothingEyesNightVisionGoggles
   - ClothingEyesNightVisionDiagnosticGoggles
   - ClothingEyesThermalVisionGoggles
@@ -96,7 +96,7 @@
   recipes:
   - TurboItemRechargerCircuitboard
   - AutolatheHyperConvectionMachineCircuitboard
-  - ProtolatheHyperConvectionMachineCircuitboard
+  # - ProtolatheHyperConvectionMachineCircuitboard LP Edit
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - TechDiskComputerCircuitboard
   - FlatpackerMachineCircuitboard

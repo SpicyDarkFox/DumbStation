@@ -8,6 +8,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared;
 using Robust.Shared.Prototypes;
+using Content.Shared._LP; // LP edit
 
 namespace Content.Client.Options.UI.Tabs;
 
@@ -61,6 +62,7 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
         Control.AddOptionCheckBox(CCVars.NoVisionFilters, DisableFiltersCheckBox);
         Control.AddOptionCheckBox(CCVars.ModernProgressBar, ModernProgressBar);
+        Control.AddOptionCheckBox(LPCvars.ChatIconsEnable, ChatIconsEnableCheckBox);
 
         Control.Initialize();
     }

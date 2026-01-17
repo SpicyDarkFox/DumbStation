@@ -19,6 +19,10 @@
     sprite:  Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieReverseEngineered
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 - type: entity
   parent: ClothingOuterHardsuitJuggernaut
@@ -33,6 +37,10 @@
     sprite:  Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/juggernaut.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitJuggernautReverseEngineered
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 - type: entity
   parent: ClothingOuterHardsuitERTLeader

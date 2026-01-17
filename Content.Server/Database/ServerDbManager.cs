@@ -95,7 +95,7 @@ namespace Content.Server.Database
             ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned = true);
 
-        Task AddServerBanAsync(ServerBanDef serverBan);
+        Task<ServerBanDef> AddServerBanAsync(ServerBanDef serverBan);
         Task AddServerUnbanAsync(ServerUnbanDef serverBan);
 
         public Task EditServerBan(
@@ -282,7 +282,7 @@ namespace Content.Server.Database
         #region Rules
 
         Task<DateTimeOffset?> GetLastReadRules(NetUserId player);
-        Task SetLastReadRules(NetUserId player, DateTimeOffset time);
+        Task SetLastReadRules(NetUserId player, DateTimeOffset? time);
 
         #endregion
 
@@ -539,7 +539,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetServerBansAsync(address, userId, hwId, modernHWIds, includeUnbanned));
         }
 
-        public Task AddServerBanAsync(ServerBanDef serverBan)
+        public Task<ServerBanDef> AddServerBanAsync(ServerBanDef serverBan)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.AddServerBanAsync(serverBan));
@@ -837,7 +837,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetLastReadRules(player));
         }
 
-        public Task SetLastReadRules(NetUserId player, DateTimeOffset time)
+        public Task SetLastReadRules(NetUserId player, DateTimeOffset? time)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SetLastReadRules(player, time));

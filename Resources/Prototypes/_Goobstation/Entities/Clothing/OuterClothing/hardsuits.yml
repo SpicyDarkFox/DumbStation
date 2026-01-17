@@ -35,6 +35,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+    # ADT edit start
+  - type: DNALocker
+    enabled: false
+    # ADT edit end
 
 
 # cybersun stealth
@@ -99,6 +103,7 @@
         # SIGNIFICANTLY Quieter than a normal hardsuit, but not perfectly stealthy. If you move while people are close enough, they can still hear it.
   - type: StaminaDamageResistance
     coefficient: 0.85 # 15%. Substantially lower than a normal hardsuit.
+  - type: DNALocker # ADT edit
 
 # cybersun dreadnought
 
@@ -149,3 +154,4 @@
       ignoreResistances: true
   - type: StaminaDamageResistance
     coefficient: 0.10 # 90% stamdgm resist
+  - type: DNALocker # ADT edit

@@ -29,11 +29,17 @@ namespace Content.Shared.Research.Components
     public sealed class ResearchConsoleBoundInterfaceState : BoundUserInterfaceState
     {
         public int Points;
-        public float SoftCapMultiplier;
-        public ResearchConsoleBoundInterfaceState(int points, float softCapMultiplier)
+
+        // LP Edit Start
+
+        // public float SoftCapMultiplier;
+        public ResearchConsoleBoundInterfaceState(int points)
+
+        // LP Edit End
+
         {
             Points = points;
-            SoftCapMultiplier = softCapMultiplier;
+            // SoftCapMultiplier = softCapMultiplier; LP Edit
         }
     }
 }

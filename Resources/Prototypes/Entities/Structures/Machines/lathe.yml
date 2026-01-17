@@ -225,6 +225,7 @@
     - Parts
     - Translator
     # EE EDIT END
+    - LPPScienceBoards # LP Edit
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -439,6 +440,10 @@
     - SecurityHypoStatic
     # EE EDIT END
     dynamicPacks:
+    # LP Edit Start
+    - Parts
+    - CameraBoards
+    # LP Edit End
     - SecurityEquipment
     - SecurityBoards
     - SecurityExplosives
@@ -520,6 +525,10 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    # LP Edit Start
+    - MedicalBoards
+    - MedicalBoardsStatic
+    # LP Edit End
     - TopicalsStatic
     - ChemistryStatic
     - MedicalStatic
@@ -529,6 +538,10 @@
     - SurgeryStatic
     - ParamedHypoStatic # EE EDIT
     dynamicPacks:
+    # LP Edit Start
+    - Parts
+    - Translator
+    # LP Edit End
     - Chemistry
   # EE EDIT START
     - Surgery

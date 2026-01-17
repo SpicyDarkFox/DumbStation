@@ -52,7 +52,7 @@ public sealed partial class ResearchSystem
             var message = Loc.GetString(
                 "research-console-unlock-technology-radio-broadcast",
                 ("technology", Loc.GetString(technologyPrototype.Name)),
-                ("amount", technologyPrototype.Cost * database.SoftCapMultiplier),
+                ("amount", technologyPrototype.Cost), // LP Edit technologyPrototype.Cost * database.SoftCapMultiplier -> technologyPrototype.Cost
                 ("approver", getIdentityEvent.Title ?? string.Empty)
             );
             _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false);
@@ -77,12 +77,12 @@ public sealed partial class ResearchSystem
         if (TryGetClientServer(uid, out _, out var serverComponent, clientComponent))
         {
             var points = clientComponent.ConnectedToServer ? serverComponent.Points : 0;
-            var softCap = clientComponent.ConnectedToServer ? serverComponent.CurrentSoftCapMultiplier : 1;
-            state = new ResearchConsoleBoundInterfaceState(points, softCap);
+            // var softCap = clientComponent.ConnectedToServer ? serverComponent.CurrentSoftCapMultiplier : 1; LP Edit
+            state = new ResearchConsoleBoundInterfaceState(points); // LP Edit deleted softCap
         }
         else
         {
-            state = new ResearchConsoleBoundInterfaceState(default, default);
+            state = new ResearchConsoleBoundInterfaceState(default);
         }
 
         _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);

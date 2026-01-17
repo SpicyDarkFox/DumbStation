@@ -34,7 +34,7 @@
     - ComputerMassMediaCircuitboard
     - AutolatheMachineCircuitboard
     - BookPressMachineCircuitboard
-    - ProtolatheMachineCircuitboard
+    - LPPProtolatheRnDMachineCircuitboard # LP Edit Protolathe -> RnD Protolathe
     - SalvageMagnetMachineCircuitboard
     - PortableGeneratorSuperPacmanMachineCircuitboard # Delta V - Add additional boards
     - PortableGeneratorJrPacmanMachineCircuitboard # Delta V - Add additional boards

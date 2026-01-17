@@ -34,6 +34,7 @@
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
                 <CheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
+                <CheckBox Name="ChatIconsEnableCheckBox" Text="{Loc 'ui-options-chat-icons-enable'}" /> <!-- LP edit -->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />
