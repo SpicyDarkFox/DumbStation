@@ -1,0 +1,63 @@
+- type: entity
+  id: LPPProtolatheRnDMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: science protolathe machine board
+  description: A machine printed circuit board for a protolathe.
+  components:
+  - type: MachineBoard
+    prototype: LPPProtolatheRnD
+    machinePartRequirements:
+      MatterBin: 2
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
+  id: LPPProtolatheCargoMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: cargo protolathe machine board
+  description: A machine printed circuit board for a protolathe.
+  components:
+  - type: MachineBoard
+    prototype: LPPProtolatheCargo
+    machinePartRequirements:
+      MatterBin: 2
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
+  id: LPPProtolatheEngiMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: engineering protolathe machine board
+  description: A machine printed circuit board for a protolathe.
+  components:
+  - type: MachineBoard
+    prototype: LPPProtolatheEngi
+    machinePartRequirements:
+      MatterBin: 2
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
+  id: LPPProtolatheServMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: service protolathe machine board
+  description: A machine printed circuit board for a protolathe.
+  components:
+  - type: MachineBoard
+    prototype: LPPProtolatheServ
+    machinePartRequirements:
+      MatterBin: 2
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker

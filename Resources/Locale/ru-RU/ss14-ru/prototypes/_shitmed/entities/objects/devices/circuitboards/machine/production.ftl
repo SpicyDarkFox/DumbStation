@@ -1,4 +1,4 @@
-ent-AutodocCircuitboard = плата автодока
+ent-AutodocCircuitboard = автодок (машинная плата)
     .desc = Печатная плата для сборки медицинской системы «Автодок».
 ent-AutodocSyndieCircuitboard = { ent-AutodocCircuitboard }
     .suffix = Синдикат

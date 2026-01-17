@@ -1,0 +1,231 @@
+- type: entity
+  id: LPPProtolatheRnD
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  name: science protolathe
+  description: Converts raw materials into advanced items. It have a label "BL CORP Tech Department".
+  components:
+  - type: Sprite
+    sprite: _LP/Structures/Machines/rnd_protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: LPPProtolatheRnDMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - ChemistryStatic
+    - SurgeryStatic
+    dynamicPacks:
+    - ScienceEquipment
+    - ScienceClothing
+    - PowerCells
+    - ScienceWeapons
+    - Mining
+    - AtmosTools
+    - EngineeringWeapons
+    - Chemistry
+    - Janitor
+    - Instruments
+    - Equipment
+    - Parts
+    - Translator
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityAmmo
+    - SecurityExplosives
+    - SecurityEquipment
+    - SecurityWeapons
+
+- type: entity
+  id: LPPProtolatheCargo
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  name: cargo protolathe
+  description: Converts raw materials into advanced items. It have a label "BL CORP Tech Department".
+  components:
+  - type: Sprite
+    sprite: _LP/Structures/Machines/cargo_protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: LPPProtolatheCargoMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - CargoBoardsStatic
+    - ChemistryStatic
+    dynamicPacks:
+    - CargoBoards
+    - PowerCells
+    - Mining
+    - Chemistry
+    - Janitor
+    - Instruments
+    - Equipment
+    - Parts
+    - Translator
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityAmmo
+    - SecurityExplosives
+    - SecurityEquipment
+    - SecurityWeapons
+
+- type: entity
+  id: LPPProtolatheEngi
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  name: engineering protolathe
+  description: Converts raw materials into advanced items. It have a label "BL CORP Tech Department".
+  components:
+  - type: Sprite
+    sprite: _LP/Structures/Machines/engi_protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: LPPProtolatheEngiMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - EngineeringBoardsStatic
+    - ChemistryStatic
+    dynamicPacks:
+    - ShuttleBoards
+    - EngineeringBoards
+    - AdvancedTools
+    - PowerCells
+    - Mining
+    - AtmosTools
+    - EngineeringWeapons
+    - Instruments
+    - Equipment
+    - Parts
+    - Translator
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityAmmo
+    - SecurityExplosives
+    - SecurityEquipment
+    - SecurityWeapons
+
+- type: entity
+  id: LPPProtolatheServ
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  name: service protolathe
+  description: Converts raw materials into advanced items. It have a label "BL CORP Tech Department".
+  components:
+  - type: Sprite
+    sprite: _LP/Structures/Machines/serv_protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: LPPProtolatheServMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - ServiceBoardsStatic
+    - ChemistryStatic
+    dynamicPacks:
+    - CameraBoards
+    - ServiceBoards
+    - PowerCells
+    - Mining
+    - AtmosTools
+    - Chemistry
+    - Janitor
+    - Instruments
+    - Equipment
+    - Parts
+    - Translator
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityAmmo
+    - SecurityExplosives
+    - SecurityEquipment
+    - SecurityWeapons

@@ -75,18 +75,22 @@ public sealed partial class ResearchSystem
             || !CanServerUnlockTechnology(client, prototype, clientDatabase, component)
             || !PrototypeManager.TryIndex(prototype.Discipline, out var disciplinePrototype)
             || !TryComp<ResearchServerComponent>(serverEnt.Value, out var researchServer)
-            || prototype.Cost * clientDatabase.SoftCapMultiplier > researchServer.Points)
+            || prototype.Cost > researchServer.Points) // LP Edit prototype.Cost * clientDatabase.SoftCapMultiplier -> prototype.Cost
             return false;
 
-        if (prototype.Tier >= disciplinePrototype.LockoutTier)
-        {
-            clientDatabase.SoftCapMultiplier *= prototype.SoftCapContribution;
-            researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
-        }
+        // LP Edit Start
+
+        // if (prototype.Tier >= disciplinePrototype.LockoutTier)
+        // {
+        //     clientDatabase.SoftCapMultiplier *= prototype.SoftCapContribution;
+        //     researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
+        // }
+
+        // LP Edit End
 
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
-        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * clientDatabase.SoftCapMultiplier));
+        ModifyServerPoints(serverEnt.Value, -(int) prototype.Cost); // LP Edit (prototype.Cost * clientDatabase.SoftCapMultiplier) -> prototype.Cost
         UpdateTechnologyCards(serverEnt.Value);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
@@ -156,7 +160,7 @@ public sealed partial class ResearchSystem
         if (!IsTechnologyAvailable(database, technology))
             return false;
 
-        if (technology.Cost * database.SoftCapMultiplier > serverComp.Points)
+        if (technology.Cost > serverComp.Points) // LP Edit technology.Cost * database.SoftCapMultiplier -> technology.Cost
             return false;
 
         return true;

@@ -45,8 +45,12 @@ public sealed partial class TechnologyDatabaseComponent : Component
     [DataField("unlockedRecipes", customTypeSerializer: typeof(PrototypeIdListSerializer<LatheRecipePrototype>))]
     public List<string> UnlockedRecipes = new();
 
-    [DataField, AutoNetworkedField]
-    public float SoftCapMultiplier = 1;
+    // LP Edit start
+
+    // [DataField, AutoNetworkedField]
+    // public float SoftCapMultiplier = 1;
+
+    // LP Edit end
 }
 
 /// <summary>

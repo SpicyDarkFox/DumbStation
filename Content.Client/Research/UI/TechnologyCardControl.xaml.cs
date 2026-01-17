@@ -34,7 +34,7 @@ public sealed partial class TechnologyCardControl : Control
         if (!hasAccess)
             ResearchButton.ToolTip = Loc.GetString("research-console-no-access-popup");
 
-        ResearchButton.Disabled = points < technology.Cost * database.SoftCapMultiplier || !hasAccess;
+        ResearchButton.Disabled = points < technology.Cost || !hasAccess; // LP Edit technology.Cost * database.SoftCapMultiplier -> technology.Cost
         ResearchButton.OnPressed += _ => OnPressed?.Invoke();
     }
 }

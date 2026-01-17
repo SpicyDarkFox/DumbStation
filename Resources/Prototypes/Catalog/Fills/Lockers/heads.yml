@@ -25,6 +25,7 @@
     - id: AstroNavCartridge
     - id: MailTeleporterMachineCircuitboard
     - id: SpaceCashLuckyBill
+    - id: LPPProtolatheCargoMachineCircuitboard # LP Edit
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -122,6 +123,7 @@
   id: LockerFillHeadOfPersonnel
   table: !type:AllSelector
     children:
+    - id: LPPProtolatheServMachineCircuitboard # LP Edit
     - id: BoxEncryptionKeyPassenger
     - id: BoxEncryptionKeyService
     - id: BoxHeadset
@@ -174,6 +176,7 @@
     - id: RCDAmmo
     - id: RPD
     - id: RubberStampCE
+    - id: LPPProtolatheEngiMachineCircuitboard # LP Edit
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -295,7 +298,7 @@
     - id: LunchboxCommandFilledRandom
       prob: 0.3
     - id: PrinterDocFlatpack
-    - id: ProtolatheMachineCircuitboard
+    - id: LPPProtolatheRnDMachineCircuitboard # LP Edit
     - id: PsiWatchCartridge
     - id: RDIDCard
     - id: ResearchComputerCircuitboard

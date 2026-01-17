@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: LPPProtolatheMachineCircuitboard
+  icon:
+    sprite: Structures/Machines/protolathe.rsi
+    state: icon
+  product: Protolathe
+  cost: 75000
+  category: cargoproduct-category-name-science
+  group: market

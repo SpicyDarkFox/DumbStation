@@ -161,8 +161,14 @@ public abstract class SharedResearchSystem : EntitySystem
 
         if (includeCost)
         {
-            var softCap = databaseComponent is not null ? databaseComponent.SoftCapMultiplier : 1;
-            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", (technology.Cost * softCap).ToString("#.##"))));
+
+            // LP Edit Start
+
+            // var softCap = databaseComponent is not null ? databaseComponent.SoftCapMultiplier : 1;
+            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", technology.Cost.ToString("#.##")))); // LP Edit (technology.Cost * softCap) -> technology.Cost
+
+            // LP Edit End
+
             description.PushNewline();
         }
 
