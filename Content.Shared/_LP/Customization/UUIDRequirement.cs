@@ -35,9 +35,10 @@ public sealed partial class UUIDRequirement : CharacterRequirement
         string uuid = ""     //LP edit
         )
     {
-        reason = Loc.GetString("player-uuid-requirement", ("inverted", Inverted));
+        var res = uuid.ToLower() == UserUID.ToLower();
+        reason = Loc.GetString("player-uuid-requirement", ("inverted", !res));
 
-        if (uuid == UserUID)
+        if (res)
             return !Inverted;
 
         return Inverted;
